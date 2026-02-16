@@ -17,22 +17,34 @@ export function Hero() {
   }, []);
 
   const heroImg = PlaceHolderImages.find((img) => img.id === "hero-bg");
+  // Link direto para download do vídeo no Google Drive
+  const videoUrl = "https://drive.google.com/uc?export=download&id=1kBAUnah8pUGMwmjJ1RYiuYUbOVR4MMzD";
 
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
       {/* Parallax Background */}
       <div
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 h-[120%]"
         style={{ transform: `translateY(${scrollY * 0.4}px)` }}
       >
-        <Image
-          src={heroImg?.imageUrl || ""}
-          alt={heroImg?.description || ""}
-          fill
-          className="object-cover brightness-75"
-          priority
-          data-ai-hint={heroImg?.imageHint}
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={heroImg?.imageUrl}
+          className="absolute inset-0 w-full h-full object-cover brightness-[0.6]"
+        >
+          <source src={videoUrl} type="video/mp4" />
+          {/* Fallback Image */}
+          <Image
+            src={heroImg?.imageUrl || ""}
+            alt={heroImg?.description || ""}
+            fill
+            className="object-cover"
+            priority
+          />
+        </video>
         <div className="absolute inset-0 bg-black/20" />
       </div>
 
