@@ -1,3 +1,46 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-bg",
+      "description": "Minimalist yoga studio with natural light",
+      "imageUrl": "https://images.unsplash.com/photo-1667061481921-b31e615ae740?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx5b2dhJTIwc3R1ZGlvfGVufDB8fHx8MTc3MTI4NTc1MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "yoga studio"
+    },
+    {
+      "id": "about-img",
+      "description": "Zen interior with plants and natural wood",
+      "imageUrl": "https://images.unsplash.com/photo-1764776502723-cd26790363b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bWVkaXRhdGlvbiUyMHNwYWNlfGVufDB8fHx8MTc3MTI4NTc1MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "meditation space"
+    },
+    {
+      "id": "hatha-yoga",
+      "description": "Hatha yoga practice",
+      "imageUrl": "https://images.unsplash.com/photo-1447452001602-7090c7ab2db3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxoYXRoYSUyMHlvZ2F8ZW58MHx8fHwxNzcxMjg1NzUxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "hatha yoga"
+    },
+    {
+      "id": "vinyasa-yoga",
+      "description": "Vinyasa flow practice",
+      "imageUrl": "https://images.unsplash.com/photo-1767611090583-8eb2f497734d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx2aW55YXNhJTIwZmxvd3xlbnwwfHx8fDE3NzEyODU3NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "vinyasa flow"
+    },
+    {
+      "id": "restorative-yoga",
+      "description": "Restorative yoga practice",
+      "imageUrl": "https://images.unsplash.com/photo-1613602025754-04e1b4a24156?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxyZXN0b3JhdGl2ZSUyMHlvZ2F8ZW58MHx8fHwxNzcxMjg1NzUxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "restorative yoga"
+    },
+    {
+      "id": "meditation",
+      "description": "Meditation practice",
+      "imageUrl": "https://images.unsplash.com/photo-1674505441276-3ef7c441d973?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtZWRpdGF0aW9uJTIwbWluZGZ1bG5lc3N8ZW58MHx8fHwxNzcxMjg1NzUxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "meditation mindfulness"
+    },
+    {
+      "id": "private-class",
+      "description": "One-on-one yoga class",
+      "imageUrl": "https://images.unsplash.com/photo-1758599879693-9e06f55a4ded?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwcml2YXRlJTIweW9nYXxlbnwwfHx8fDE3NzEyODU3NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "private yoga"
+    }
+  ]
 }
