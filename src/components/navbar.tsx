@@ -16,14 +16,18 @@ import {
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const scrolled = window.scrollY > 50;
+      if (scrolled !== isScrolled) {
+        setIsScrolled(scrolled);
+      }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isScrolled]);
 
   const navLinks = [
     { name: "Práticas", href: "#services" },
@@ -32,6 +36,10 @@ export function Navbar() {
     { name: "Depoimentos", href: "#testimonials" },
     { name: "Contato", href: "#contact" },
   ];
+
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
 
   return (
     <header className="fixed top-6 left-0 right-0 z-50 flex justify-center px-6 pointer-events-none">
@@ -43,9 +51,8 @@ export function Navbar() {
             : "max-w-7xl h-20 bg-transparent px-0"
         )}
       >
-        {/* Desktop Layout (Grid 3 Columns) */}
+        {/* Desktop Layout */}
         <div className="hidden md:grid grid-cols-3 w-full items-center">
-          {/* Col 1: Logo */}
           <div className="flex justify-start">
             <Link href="/" className="flex items-center gap-2 group">
               <Leaf className={cn(
@@ -61,7 +68,6 @@ export function Navbar() {
             </Link>
           </div>
 
-          {/* Col 2: Navigation */}
           <nav className="flex justify-center gap-8">
             {navLinks.map((link) => (
               <Link
@@ -79,7 +85,6 @@ export function Navbar() {
             ))}
           </nav>
 
-          {/* Col 3: CTA */}
           <div className="flex justify-end">
             <Button 
               variant="default" 
@@ -106,7 +111,7 @@ export function Navbar() {
             </span>
           </Link>
 
-          <Sheet>
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button 
                 variant="ghost" 
@@ -122,7 +127,7 @@ export function Navbar() {
             <SheetContent side="right" className="flex flex-col w-[300px] sm:w-[400px] bg-background">
               <SheetHeader className="text-left mb-8">
                 <SheetTitle>
-                  <Link href="/" className="flex items-center gap-2">
+                  <Link href="/" className="flex items-center gap-2" onClick={handleLinkClick}>
                     <Leaf className="w-6 h-6 text-primary" />
                     <span className="font-headline text-2xl">
                       Equilibrium <span className="text-accent">Yoga</span>
@@ -137,6 +142,7 @@ export function Navbar() {
                     <li key={link.name}>
                       <Link
                         href={link.href}
+                        onClick={handleLinkClick}
                         className="text-2xl font-headline text-foreground/80 hover:text-primary transition-colors"
                       >
                         {link.name}
@@ -158,7 +164,7 @@ export function Navbar() {
                     <MessageCircle className="w-6 h-6" />
                   </Link>
                 </div>
-                <Button className="w-full h-14 rounded-full text-lg font-medium" asChild>
+                <Button className="w-full h-14 rounded-full text-lg font-medium" asChild onClick={handleLinkClick}>
                   <Link href="#contact">Agendar Agora</Link>
                 </Button>
               </div>
