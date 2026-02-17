@@ -4,16 +4,22 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Leaf } from "lucide-react";
+import { Menu, Leaf, Instagram, Facebook, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -28,65 +34,138 @@ export function Navbar() {
   ];
 
   return (
-    <nav
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 md:px-12",
-        isScrolled ? "bg-background/90 backdrop-blur-md py-4 shadow-sm" : "bg-transparent py-6"
-      )}
-    >
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
-          <Leaf className="w-6 h-6 text-primary group-hover:rotate-12 transition-transform" />
-          <span className="font-headline text-2xl tracking-wide text-foreground">
-            Equilibrium <span className="text-accent font-light">Yoga</span>
-          </span>
-        </Link>
-
-        {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium text-foreground/80 hover:text-accent transition-colors"
-            >
-              {link.name}
+    <header className="fixed top-6 left-0 right-0 z-50 flex justify-center px-6 pointer-events-none">
+      <div
+        className={cn(
+          "w-full transition-all duration-500 ease-[0.22,1,0.36,1] flex items-center pointer-events-auto",
+          isScrolled
+            ? "max-w-3xl h-16 bg-white/80 backdrop-blur-lg rounded-full border border-white/20 shadow-xl shadow-black/5 px-8"
+            : "max-w-7xl h-20 bg-transparent px-0"
+        )}
+      >
+        {/* Desktop Layout (Grid 3 Columns) */}
+        <div className="hidden md:grid grid-cols-3 w-full items-center">
+          {/* Col 1: Logo */}
+          <div className="flex justify-start">
+            <Link href="/" className="flex items-center gap-2 group">
+              <Leaf className={cn(
+                "w-6 h-6 transition-colors duration-500",
+                isScrolled ? "text-primary" : "text-white"
+              )} />
+              <span className={cn(
+                "font-headline text-2xl tracking-wide transition-colors duration-500",
+                isScrolled ? "text-foreground" : "text-white"
+              )}>
+                Equilibrium <span className="text-accent font-light">Yoga</span>
+              </span>
             </Link>
-          ))}
-          <Button variant="default" className="rounded-full px-6 hover:scale-105 transition-transform" asChild>
-            <Link href="#contact">Agendar Aula</Link>
-          </Button>
+          </div>
+
+          {/* Col 2: Navigation */}
+          <nav className="flex justify-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={cn(
+                  "text-sm font-medium transition-colors duration-500",
+                  isScrolled 
+                    ? "text-foreground/80 hover:text-accent" 
+                    : "text-white/90 hover:text-white"
+                )}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Col 3: CTA */}
+          <div className="flex justify-end">
+            <Button 
+              variant="default" 
+              className="rounded-full px-8 bg-primary hover:bg-primary/90 transition-transform hover:scale-105"
+              asChild
+            >
+              <Link href="#contact">Agendar</Link>
+            </Button>
+          </div>
         </div>
 
-        {/* Mobile Toggle */}
-        <button
-          className="md:hidden text-foreground"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          {mobileMenuOpen ? <X /> : <Menu />}
-        </button>
+        {/* Mobile Layout */}
+        <div className="md:hidden flex justify-between items-center w-full">
+          <Link href="/" className="flex items-center gap-2">
+            <Leaf className={cn(
+              "w-5 h-5 transition-colors duration-500",
+              isScrolled ? "text-primary" : "text-white"
+            )} />
+            <span className={cn(
+              "font-headline text-xl tracking-wide transition-colors duration-500",
+              isScrolled ? "text-foreground" : "text-white"
+            )}>
+              Equilibrium
+            </span>
+          </Link>
+
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className={cn(
+                  "transition-colors duration-500",
+                  isScrolled ? "text-primary" : "text-white"
+                )}
+              >
+                <Menu className="w-6 h-6" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="flex flex-col w-[300px] sm:w-[400px] bg-background">
+              <SheetHeader className="text-left mb-8">
+                <SheetTitle>
+                  <Link href="/" className="flex items-center gap-2">
+                    <Leaf className="w-6 h-6 text-primary" />
+                    <span className="font-headline text-2xl">
+                      Equilibrium <span className="text-accent">Yoga</span>
+                    </span>
+                  </Link>
+                </SheetTitle>
+              </SheetHeader>
+
+              <nav className="flex-1">
+                <ul className="space-y-6">
+                  {navLinks.map((link) => (
+                    <li key={link.name}>
+                      <Link
+                        href={link.href}
+                        className="text-2xl font-headline text-foreground/80 hover:text-primary transition-colors"
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+
+              <div className="mt-auto space-y-8 pb-6">
+                <div className="flex gap-6 justify-center text-primary/60">
+                  <Link href="#" className="hover:text-primary transition-colors">
+                    <Instagram className="w-6 h-6" />
+                  </Link>
+                  <Link href="#" className="hover:text-primary transition-colors">
+                    <Facebook className="w-6 h-6" />
+                  </Link>
+                  <Link href="#" className="hover:text-primary transition-colors">
+                    <MessageCircle className="w-6 h-6" />
+                  </Link>
+                </div>
+                <Button className="w-full h-14 rounded-full text-lg font-medium" asChild>
+                  <Link href="#contact">Agendar Agora</Link>
+                </Button>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
-
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border p-6 flex flex-col gap-4 animate-in fade-in slide-in-from-top-4">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-lg font-medium text-foreground"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {link.name}
-            </Link>
-          ))}
-          <Button variant="default" className="w-full rounded-full" asChild>
-            <Link href="#contact" onClick={() => setMobileMenuOpen(false)}>
-              Agendar Aula
-            </Link>
-          </Button>
-        </div>
-      )}
-    </nav>
+    </header>
   );
 }
