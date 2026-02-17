@@ -17,8 +17,8 @@ export function Hero() {
   }, []);
 
   const heroImg = PlaceHolderImages.find((img) => img.id === "hero-bg");
-  // Link direto para download do vídeo no Google Drive
-  const videoUrl = "https://drive.google.com/uc?export=download&id=1kBAUnah8pUGMwmjJ1RYiuYUbOVR4MMzD";
+  // Nova URL do vídeo cinematográfico
+  const videoUrl = "https://whfdrrdozhyavyflgaxo.supabase.co/storage/v1/object/sign/yoga/Ultraprofessional_cinematic_commercial_20260.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jOWY1OGE2Ni03MDFhLTRhNDQtOWJhZC0zOGRkNmVkYTNhODAiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ5b2dhL1VsdHJhcHJvZmVzc2lvbmFsX2NpbmVtYXRpY19jb21tZXJjaWFsXzIwMjYwLm1wNCIsImlhdCI6MTc3MTI4NjU1OCwiZXhwIjo0OTI0ODg2NTU4fQ.wbb6XHux0Gdf3G8H7Gag2I9mWiYlJnozCJCrqP8fRTI";
 
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
