@@ -20,14 +20,21 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrolled = window.scrollY > 50;
-      if (scrolled !== isScrolled) {
-        setIsScrolled(scrolled);
+      // Usando uma lógica mais estável para evitar atualizações excessivas
+      const offset = window.scrollY;
+      if (offset > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
       }
     };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
+    // Verificação inicial
+    handleScroll();
+    
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isScrolled]);
+  }, []);
 
   const navLinks = [
     { name: "Práticas", href: "#services" },
