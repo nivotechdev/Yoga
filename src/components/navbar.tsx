@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Menu, Leaf, Instagram, Facebook, MessageCircle } from "lucide-react";
@@ -20,17 +20,10 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Usando uma lógica mais estável para evitar atualizações excessivas
-      const offset = window.scrollY;
-      if (offset > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    // Verificação inicial
     handleScroll();
     
     return () => window.removeEventListener("scroll", handleScroll);
@@ -44,30 +37,30 @@ export function Navbar() {
     { name: "Contato", href: "#contact" },
   ];
 
-  const handleLinkClick = () => {
+  const handleLinkClick = useCallback(() => {
     setIsOpen(false);
-  };
+  }, []);
 
   return (
-    <header className="fixed top-6 left-0 right-0 z-50 flex justify-center px-6 pointer-events-none">
+    <header className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
       <div
         className={cn(
-          "w-full transition-all duration-500 ease-[0.22,1,0.36,1] flex items-center pointer-events-auto",
+          "w-full transition-all duration-500 ease-[0.22,1,0.36,1] flex items-center pointer-events-auto overflow-hidden",
           isScrolled
-            ? "max-w-3xl h-16 bg-white/80 backdrop-blur-lg rounded-full border border-white/20 shadow-xl shadow-black/5 px-8"
-            : "max-w-7xl h-20 bg-transparent px-0"
+            ? "max-w-4xl h-16 bg-white/80 backdrop-blur-lg rounded-full border border-white/20 shadow-xl shadow-black/5 px-6"
+            : "max-w-7xl h-20 bg-transparent px-4"
         )}
       >
         {/* Desktop Layout */}
         <div className="hidden md:grid grid-cols-3 w-full items-center">
           <div className="flex justify-start">
-            <Link href="/" className="flex items-center gap-2 group">
+            <Link href="/" className="flex items-center gap-2 group shrink-0">
               <Leaf className={cn(
                 "w-6 h-6 transition-colors duration-500",
                 isScrolled ? "text-primary" : "text-white"
               )} />
               <span className={cn(
-                "font-headline text-2xl tracking-wide transition-colors duration-500",
+                "font-headline text-2xl tracking-tight transition-colors duration-500 whitespace-nowrap",
                 isScrolled ? "text-foreground" : "text-white"
               )}>
                 Equilibrium <span className="text-accent font-light">Yoga</span>
@@ -75,13 +68,13 @@ export function Navbar() {
             </Link>
           </div>
 
-          <nav className="flex justify-center gap-8">
+          <nav className="flex justify-center gap-6 lg:gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
                 className={cn(
-                  "text-sm font-medium transition-colors duration-500",
+                  "text-sm font-medium transition-colors duration-500 whitespace-nowrap",
                   isScrolled 
                     ? "text-foreground/80 hover:text-accent" 
                     : "text-white/90 hover:text-white"
@@ -95,7 +88,10 @@ export function Navbar() {
           <div className="flex justify-end">
             <Button 
               variant="default" 
-              className="rounded-full px-8 bg-primary hover:bg-primary/90 transition-transform hover:scale-105"
+              className={cn(
+                "rounded-full px-6 transition-all duration-300 hover:scale-105",
+                isScrolled ? "bg-primary" : "bg-primary/90 text-white"
+              )}
               asChild
             >
               <Link href="#contact">Agendar</Link>
@@ -105,13 +101,13 @@ export function Navbar() {
 
         {/* Mobile Layout */}
         <div className="md:hidden flex justify-between items-center w-full">
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2 shrink-0">
             <Leaf className={cn(
               "w-5 h-5 transition-colors duration-500",
               isScrolled ? "text-primary" : "text-white"
             )} />
             <span className={cn(
-              "font-headline text-xl tracking-wide transition-colors duration-500",
+              "font-headline text-xl tracking-wide transition-colors duration-500 whitespace-nowrap",
               isScrolled ? "text-foreground" : "text-white"
             )}>
               Equilibrium
@@ -131,7 +127,7 @@ export function Navbar() {
                 <Menu className="w-6 h-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="flex flex-col w-[300px] sm:w-[400px] bg-background">
+            <SheetContent side="right" className="flex flex-col w-[300px] sm:w-[350px] bg-background">
               <SheetHeader className="text-left mb-8">
                 <SheetTitle>
                   <Link href="/" className="flex items-center gap-2" onClick={handleLinkClick}>
@@ -150,7 +146,7 @@ export function Navbar() {
                       <Link
                         href={link.href}
                         onClick={handleLinkClick}
-                        className="text-2xl font-headline text-foreground/80 hover:text-primary transition-colors"
+                        className="text-2xl font-headline text-foreground/80 hover:text-primary transition-colors block"
                       >
                         {link.name}
                       </Link>
@@ -163,9 +159,6 @@ export function Navbar() {
                 <div className="flex gap-6 justify-center text-primary/60">
                   <Link href="#" className="hover:text-primary transition-colors">
                     <Instagram className="w-6 h-6" />
-                  </Link>
-                  <Link href="#" className="hover:text-primary transition-colors">
-                    <Facebook className="w-6 h-6" />
                   </Link>
                   <Link href="#" className="hover:text-primary transition-colors">
                     <MessageCircle className="w-6 h-6" />
