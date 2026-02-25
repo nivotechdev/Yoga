@@ -6,7 +6,7 @@ import { CalendarDays, Clock } from "lucide-react";
 const scheduleData = [
   {
     day: "Segunda-feira",
-    times: ["07:30", "16:00", "18:15"],
+    times: ["07:30", "17:00", "18:15"],
   },
   {
     day: "Terça-feira",
@@ -14,7 +14,7 @@ const scheduleData = [
   },
   {
     day: "Quarta-feira",
-    times: ["11:00", "16:00", "18:15"],
+    times: ["11:00", "12:10", "17:00", "18:15"],
   },
   {
     day: "Quinta-feira",
@@ -22,7 +22,7 @@ const scheduleData = [
   },
   {
     day: "Sexta-feira",
-    times: ["07:30", "18:15"],
+    times: ["07:30", "12:10", "18:15"],
   },
 ];
 
@@ -31,7 +31,7 @@ export function Schedule() {
     <section id="schedule" className="py-32 px-6 bg-background/50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20 reveal">
-          <span className="text-accent text-sm tracking-[0.4em] uppercase mb-4 block">
+          <span className="text-accent text-sm tracking-[0.4em] uppercase mb-4 block font-medium">
             Cronograma Exclusivo
           </span>
           <h2 className="font-headline text-4xl md:text-6xl text-foreground mb-6">
