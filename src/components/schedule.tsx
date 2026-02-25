@@ -40,8 +40,8 @@ export function Schedule() {
       {/* Elementos decorativos de fundo */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 pointer-events-none" />
       
-      <div className="max-w-7xl mx-auto relative">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 reveal">
+      <div className="max-w-7xl mx-auto relative md:px-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 reveal px-0 md:px-4">
           <div className="max-w-2xl">
             <span className="text-accent text-sm tracking-[0.4em] uppercase mb-4 block font-medium">
               Cronograma Exclusivo
@@ -58,8 +58,8 @@ export function Schedule() {
 
         <div className="reveal relative group">
           {/* Gradientes de desfoque nas bordas para sensação de infinito */}
-          <div className="absolute inset-y-0 left-0 w-12 md:w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-12 md:w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 left-0 w-12 md:w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-12 md:w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 
           <Carousel
             opts={{
@@ -104,8 +104,8 @@ export function Schedule() {
             
             {/* Botões de navegação estrategicamente posicionados nas laterais (desktop) */}
             <div className="hidden md:block">
-              <CarouselPrevious className="-left-12 h-14 w-14 rounded-full border-border/40 bg-white/80 backdrop-blur-sm hover:bg-accent hover:text-white hover:border-accent transition-all shadow-lg" />
-              <CarouselNext className="-right-12 h-14 w-14 rounded-full border-border/40 bg-white/80 backdrop-blur-sm hover:bg-accent hover:text-white hover:border-accent transition-all shadow-lg" />
+              <CarouselPrevious className="-left-6 h-14 w-14 rounded-full border-border/40 bg-white/80 backdrop-blur-sm hover:bg-accent hover:text-white hover:border-accent transition-all shadow-lg z-20" />
+              <CarouselNext className="-right-6 h-14 w-14 rounded-full border-border/40 bg-white/80 backdrop-blur-sm hover:bg-accent hover:text-white hover:border-accent transition-all shadow-lg z-20" />
             </div>
 
             {/* Navegação Mobile simplificada */}
