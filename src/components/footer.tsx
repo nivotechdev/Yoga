@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import Image from "next/image";
 import { Instagram, MessageCircle } from "lucide-react";
@@ -6,6 +5,7 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export function Footer() {
   const logo = PlaceHolderImages.find(img => img.id === 'site-logo');
+  const instagramUrl = "https://www.instagram.com/gandhayoga/";
 
   return (
     <footer className="bg-foreground text-background py-16 px-6">
@@ -26,10 +26,18 @@ export function Footer() {
               Nossa missão é guiar você em uma jornada de autoconhecimento e equilíbrio através de práticas milenares adaptadas ao ritmo contemporâneo.
             </p>
             <div className="flex gap-4">
-              <Link href="#" className="w-10 h-10 rounded-full border border-background/20 flex items-center justify-center hover:bg-accent transition-colors">
+              <Link 
+                href={instagramUrl} 
+                target="_blank"
+                className="w-10 h-10 rounded-full border border-background/20 flex items-center justify-center hover:bg-accent transition-colors"
+              >
                 <Instagram className="w-5 h-5" />
               </Link>
-              <Link href="#" className="w-10 h-10 rounded-full border border-background/20 flex items-center justify-center hover:bg-accent transition-colors">
+              <Link 
+                href="https://wa.me/5511987654321" 
+                target="_blank"
+                className="w-10 h-10 rounded-full border border-background/20 flex items-center justify-center hover:bg-accent transition-colors"
+              >
                 <MessageCircle className="w-5 h-5" />
               </Link>
             </div>

@@ -46,17 +46,17 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 1 }}
           viewport={{ once: true }}
-          className="max-w-2xl mb-16"
+          className="max-w-3xl mb-16"
         >
-          <div className="space-y-6 text-lg md:text-xl text-muted-foreground font-light leading-relaxed border-l-2 border-accent/20 pl-6 md:pl-8">
+          <div className="space-y-8 text-xl md:text-2xl text-muted-foreground font-light leading-relaxed border-l-2 border-accent/20 pl-6 md:pl-10">
             <p>
               A verdadeira sofisticação reside na clareza da mente e na harmonia do corpo. O <span className="text-foreground font-medium italic">Gandha</span> não é apenas um estúdio; é o santuário onde o tempo desacelera e sua melhor versão emerge.
             </p>
-            <p>
-              Em nossas turmas exclusivas de número reduzido, você não é apenas um praticante, é parte de uma comunidade que valoriza a <span className="text-accent font-medium">excelência</span> e o autoconhecimento profundo. 
-            </p>
             <p className="text-foreground font-normal">
-              O convite está feito: troque o excesso pela essência. Agende sua primeira prática e sinta o impacto imediato de um corpo e mente em perfeito equilíbrio.
+              Em nossas turmas de número reduzido, cada prática é uma experiência personalizada de <span className="text-accent font-medium italic">alta costura</span> para sua alma. Troque o excesso pela essência e descubra o impacto imediato de um corpo e mente em perfeito equilíbrio.
+            </p>
+            <p className="text-lg md:text-xl italic opacity-80">
+              O convite está feito: reserve sua vaga e sinta a transformação.
             </p>
           </div>
         </motion.div>

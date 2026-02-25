@@ -19,6 +19,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   
   const logoUrl = "https://whfdrrdozhyavyflgaxo.supabase.co/storage/v1/object/sign/yoga/yoga-removebg-preview.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jOWY1OGE2Ni03MDFhLTRhNDQtOWJhZC0zOGRkNmVkYTNhODAiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ5b2dhL3lvZ2EtcmVtb3ZlYmctcHJldmlldy5wbmciLCJpYXQiOjE3NzIwMzEyNzQsImV4cCI6MzMzMDgwMzEyNzR9.KpEnBPjF57rgceI_Ka7v5gWMmhyYF901NYXC81Bomzk";
+  const instagramUrl = "https://www.instagram.com/gandhayoga/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -164,10 +165,10 @@ export function Navbar() {
 
               <div className="mt-auto space-y-8 pb-6">
                 <div className="flex gap-6 justify-center text-primary/60">
-                  <Link href="#" className="hover:text-primary transition-colors">
+                  <Link href={instagramUrl} target="_blank" className="hover:text-primary transition-colors">
                     <Instagram className="w-6 h-6" />
                   </Link>
-                  <Link href="#" className="hover:text-primary transition-colors">
+                  <Link href="https://wa.me/5511987654321" target="_blank" className="hover:text-primary transition-colors">
                     <MessageCircle className="w-6 h-6" />
                   </Link>
                 </div>
