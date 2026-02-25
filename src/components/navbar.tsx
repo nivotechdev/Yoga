@@ -1,11 +1,12 @@
-
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Menu, Leaf, Instagram, Facebook, MessageCircle } from "lucide-react";
+import { Menu, Instagram, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
 import {
   Sheet,
   SheetContent,
@@ -17,6 +18,7 @@ import {
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const logo = PlaceHolderImages.find(img => img.id === 'site-logo');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,16 +57,18 @@ export function Navbar() {
         <div className="hidden md:grid grid-cols-3 w-full items-center">
           <div className="flex justify-start">
             <Link href="/" className="flex items-center gap-2 group shrink-0">
-              <Leaf className={cn(
-                "w-6 h-6 transition-colors duration-500",
-                isScrolled ? "text-primary" : "text-white"
-              )} />
-              <span className={cn(
-                "font-headline text-2xl tracking-tight transition-colors duration-500 whitespace-nowrap",
-                isScrolled ? "text-foreground" : "text-white"
-              )}>
-                Equilibrium <span className="text-accent font-light">Yoga</span>
-              </span>
+              <div className="relative h-10 w-40">
+                <Image
+                  src={logo?.imageUrl || ""}
+                  alt="Equilibrium Yoga"
+                  fill
+                  className={cn(
+                    "object-contain transition-all duration-500",
+                    isScrolled ? "brightness-100" : "brightness-0 invert"
+                  )}
+                  priority
+                />
+              </div>
             </Link>
           </div>
 
@@ -102,16 +106,17 @@ export function Navbar() {
         {/* Mobile Layout */}
         <div className="md:hidden flex justify-between items-center w-full">
           <Link href="/" className="flex items-center gap-2 shrink-0">
-            <Leaf className={cn(
-              "w-5 h-5 transition-colors duration-500",
-              isScrolled ? "text-primary" : "text-white"
-            )} />
-            <span className={cn(
-              "font-headline text-xl tracking-wide transition-colors duration-500 whitespace-nowrap",
-              isScrolled ? "text-foreground" : "text-white"
-            )}>
-              Equilibrium
-            </span>
+            <div className="relative h-8 w-32">
+              <Image
+                src={logo?.imageUrl || ""}
+                alt="Equilibrium Yoga"
+                fill
+                className={cn(
+                  "object-contain transition-all duration-500",
+                  isScrolled ? "brightness-100" : "brightness-0 invert"
+                )}
+              />
+            </div>
           </Link>
 
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -131,10 +136,14 @@ export function Navbar() {
               <SheetHeader className="text-left mb-8">
                 <SheetTitle>
                   <Link href="/" className="flex items-center gap-2" onClick={handleLinkClick}>
-                    <Leaf className="w-6 h-6 text-primary" />
-                    <span className="font-headline text-2xl">
-                      Equilibrium <span className="text-accent">Yoga</span>
-                    </span>
+                    <div className="relative h-10 w-40">
+                      <Image
+                        src={logo?.imageUrl || ""}
+                        alt="Equilibrium Yoga"
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
                   </Link>
                 </SheetTitle>
               </SheetHeader>
