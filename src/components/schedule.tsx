@@ -9,6 +9,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { cn } from "@/lib/utils";
 
 const scheduleData = [
   {
@@ -21,7 +22,7 @@ const scheduleData = [
   },
   {
     day: "Quarta-feira",
-    times: ["11:00", "12:10", "17:00", "18:15"],
+    times: ["07:30", "11:00", "12:10", "17:00", "18:15"],
   },
   {
     day: "Quinta-feira",
@@ -35,8 +36,11 @@ const scheduleData = [
 
 export function Schedule() {
   return (
-    <section id="schedule" className="py-32 px-6 bg-background/50 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section id="schedule" className="py-32 px-6 bg-background relative overflow-hidden">
+      {/* Elementos decorativos de fundo */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 pointer-events-none" />
+      
+      <div className="max-w-7xl mx-auto relative">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 reveal">
           <div className="max-w-2xl">
             <span className="text-accent text-sm tracking-[0.4em] uppercase mb-4 block font-medium">
@@ -46,29 +50,33 @@ export function Schedule() {
               O Momento da Sua Pausa
             </h2>
             <p className="text-muted-foreground text-lg font-light leading-relaxed">
-              Nossos horários são desenhados para respeitar o ritmo circadiano, 
+              Nossos horários são desenhados para respeitar o seu ritmo, 
               proporcionando equilíbrio desde o despertar até o recolhimento.
             </p>
           </div>
         </div>
 
-        <div className="reveal">
+        <div className="reveal relative group">
+          {/* Gradientes de desfoque nas bordas para sensação de infinito */}
+          <div className="absolute inset-y-0 left-0 w-12 md:w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-12 md:w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+
           <Carousel
             opts={{
               align: "start",
-              loop: false,
+              loop: true,
             }}
-            className="w-full relative"
+            className="w-full"
           >
             <CarouselContent className="-ml-4 md:-ml-8">
               {scheduleData.map((item, index) => (
-                <CarouselItem key={item.day} className="pl-4 md:pl-8 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/5">
+                <CarouselItem key={item.day} className="pl-4 md:pl-8 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
                   <div
-                    className="h-full bg-card p-8 rounded-[2.5rem] border border-border/30 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-700 group flex flex-col"
+                    className="h-full bg-card p-8 rounded-[2.5rem] border border-border/30 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-700 group/card flex flex-col"
                     style={{ transitionDelay: `${index * 50}ms` }}
                   >
                     <div className="mb-10">
-                      <div className="w-14 h-14 rounded-full bg-primary/5 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform duration-700">
+                      <div className="w-14 h-14 rounded-full bg-primary/5 flex items-center justify-center text-primary mb-6 group-hover/card:bg-primary group-hover/card:text-white transition-all duration-700">
                         <CalendarDays className="w-6 h-6" />
                       </div>
                       <h3 className="font-headline text-2xl text-foreground mb-1">
@@ -76,7 +84,7 @@ export function Schedule() {
                       </h3>
                     </div>
 
-                    <div className="space-y-4 mt-auto">
+                    <div className="space-y-3 mt-auto">
                       {item.times.map((time) => (
                         <div
                           key={time}
@@ -94,9 +102,16 @@ export function Schedule() {
               ))}
             </CarouselContent>
             
-            <div className="flex justify-end gap-4 mt-12 md:absolute md:-top-24 md:right-0 md:mt-0">
-              <CarouselPrevious className="static h-14 w-14 rounded-full border-border/40 hover:bg-accent hover:text-white transition-all" />
-              <CarouselNext className="static h-14 w-14 rounded-full border-border/40 hover:bg-accent hover:text-white transition-all" />
+            {/* Botões de navegação estrategicamente posicionados nas laterais (desktop) */}
+            <div className="hidden md:block">
+              <CarouselPrevious className="-left-12 h-14 w-14 rounded-full border-border/40 bg-white/80 backdrop-blur-sm hover:bg-accent hover:text-white hover:border-accent transition-all shadow-lg" />
+              <CarouselNext className="-right-12 h-14 w-14 rounded-full border-border/40 bg-white/80 backdrop-blur-sm hover:bg-accent hover:text-white hover:border-accent transition-all shadow-lg" />
+            </div>
+
+            {/* Navegação Mobile simplificada */}
+            <div className="flex md:hidden justify-center gap-6 mt-12">
+              <CarouselPrevious className="static translate-y-0 h-14 w-14 rounded-full border-border/40 bg-card" />
+              <CarouselNext className="static translate-y-0 h-14 w-14 rounded-full border-border/40 bg-card" />
             </div>
           </Carousel>
         </div>
@@ -105,7 +120,7 @@ export function Schedule() {
           <p className="text-muted-foreground font-light italic text-sm">
             * Aulas exclusivas com no máximo 8 praticantes por turma. 
             <br />
-            Sujeito a disponibilidade sob agendamento prévio.
+            Agende sua experiência com antecedência para garantir sua vaga.
           </p>
         </div>
       </div>
