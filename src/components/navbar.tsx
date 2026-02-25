@@ -60,7 +60,7 @@ export function Navbar() {
               <div className="relative h-10 w-40">
                 <Image
                   src={logoUrl}
-                  alt="Equilibrium Yoga"
+                  alt="Gandha Yoga"
                   fill
                   className={cn(
                     "object-contain transition-all duration-500",
@@ -108,7 +108,7 @@ export function Navbar() {
             <div className="relative h-8 w-32">
               <Image
                 src={logoUrl}
-                alt="Equilibrium Yoga"
+                alt="Gandha Yoga"
                 fill
                 className={cn(
                   "object-contain transition-all duration-500",
@@ -138,7 +138,7 @@ export function Navbar() {
                     <div className="relative h-10 w-40">
                       <Image
                         src={logoUrl}
-                        alt="Equilibrium Yoga"
+                        alt="Gandha Yoga"
                         fill
                         className="object-contain"
                       />

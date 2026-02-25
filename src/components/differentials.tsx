@@ -51,7 +51,7 @@ export function Differentials() {
              <div className="absolute inset-0 bg-primary/5 rounded-3xl" />
              <div className="absolute inset-4 border border-dashed border-accent/30 rounded-3xl flex items-center justify-center p-12">
                 <div className="text-center">
-                   <div className="font-headline text-8xl text-accent/20 mb-4 italic">Equilibrium</div>
+                   <div className="font-headline text-8xl text-accent/20 mb-4 italic">Gandha</div>
                    <p className="text-accent text-sm tracking-[0.3em] uppercase">Silence & Harmony</p>
                 </div>
              </div>

@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import Image from "next/image";
 import { Instagram, MessageCircle } from "lucide-react";
@@ -15,7 +16,7 @@ export function Footer() {
               <div className="relative h-12 w-48">
                 <Image
                   src={logo?.imageUrl || ""}
-                  alt="Equilibrium Yoga"
+                  alt="Gandha Yoga"
                   fill
                   className="object-contain brightness-0 invert"
                 />
@@ -55,7 +56,7 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-background/10 text-center text-sm text-background/40 font-light">
-          <p>© {new Date().getFullYear()} Equilibrium Yoga Space. Todos os direitos reservados.</p>
+          <p>© {new Date().getFullYear()} Gandha Yoga Space. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

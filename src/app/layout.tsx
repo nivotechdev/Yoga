@@ -3,7 +3,7 @@ import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Equilibrium Yoga Space',
+  title: 'Gandha Yoga Space',
   description: 'Um refúgio para o seu bem-estar. Equilíbrio entre corpo, mente e essência.',
 };
 

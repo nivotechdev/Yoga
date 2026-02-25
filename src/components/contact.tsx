@@ -51,7 +51,7 @@ export function Contact() {
         >
           <div className="space-y-6 text-lg md:text-xl text-muted-foreground font-light leading-relaxed border-l-2 border-accent/20 pl-6 md:pl-8">
             <p>
-              A verdadeira sofisticação reside na clareza da mente e na harmonia do corpo. O <span className="text-foreground font-medium italic">Equilibrium</span> não é apenas um estúdio; é o santuário onde o tempo desacelera e sua melhor versão emerge.
+              A verdadeira sofisticação reside na clareza da mente e na harmonia do corpo. O <span className="text-foreground font-medium italic">Gandha</span> não é apenas um estúdio; é o santuário onde o tempo desacelera e sua melhor versão emerge.
             </p>
             <p>
               Em nossas turmas exclusivas de número reduzido, você não é apenas um praticante, é parte de uma comunidade que valoriza a <span className="text-accent font-medium">excelência</span> e o autoconhecimento profundo. 
