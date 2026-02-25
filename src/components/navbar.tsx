@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
@@ -6,7 +7,6 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Menu, Instagram, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import {
   Sheet,
   SheetContent,
@@ -18,7 +18,8 @@ import {
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const logo = PlaceHolderImages.find(img => img.id === 'site-logo');
+  
+  const logoUrl = "https://whfdrrdozhyavyflgaxo.supabase.co/storage/v1/object/sign/yoga/yoga-removebg-preview.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jOWY1OGE2Ni03MDFhLTRhNDQtOWJhZC0zOGRkNmVkYTNhODAiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ5b2dhL3lvZ2EtcmVtb3ZlYmctcHJldmlldy5wbmciLCJpYXQiOjE3NzIwMzEyNzQsImV4cCI6MzMzMDgwMzEyNzR9.KpEnBPjF57rgceI_Ka7v5gWMmhyYF901NYXC81Bomzk";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,6 +34,7 @@ export function Navbar() {
 
   const navLinks = [
     { name: "Práticas", href: "#services" },
+    { name: "Horários", href: "#schedule" },
     { name: "Sobre", href: "#about" },
     { name: "Diferenciais", href: "#differentials" },
     { name: "Contato", href: "#contact" },
@@ -52,13 +54,12 @@ export function Navbar() {
             : "max-w-7xl h-20 bg-transparent px-4"
         )}
       >
-        {/* Desktop Layout */}
         <div className="hidden md:grid grid-cols-3 w-full items-center">
           <div className="flex justify-start">
             <Link href="/" className="flex items-center gap-2 group shrink-0">
               <div className="relative h-10 w-40">
                 <Image
-                  src={logo?.imageUrl || ""}
+                  src={logoUrl}
                   alt="Equilibrium Yoga"
                   fill
                   className={cn(
@@ -102,12 +103,11 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Layout */}
         <div className="md:hidden flex justify-between items-center w-full">
           <Link href="/" className="flex items-center gap-2 shrink-0">
             <div className="relative h-8 w-32">
               <Image
-                src={logo?.imageUrl || ""}
+                src={logoUrl}
                 alt="Equilibrium Yoga"
                 fill
                 className={cn(
@@ -137,7 +137,7 @@ export function Navbar() {
                   <Link href="/" className="flex items-center gap-2" onClick={handleLinkClick}>
                     <div className="relative h-10 w-40">
                       <Image
-                        src={logo?.imageUrl || ""}
+                        src={logoUrl}
                         alt="Equilibrium Yoga"
                         fill
                         className="object-contain"
