@@ -35,7 +35,6 @@ export function Navbar() {
     { name: "Práticas", href: "#services" },
     { name: "Sobre", href: "#about" },
     { name: "Diferenciais", href: "#differentials" },
-    { name: "Depoimentos", href: "#testimonials" },
     { name: "Contato", href: "#contact" },
   ];
 
