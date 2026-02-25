@@ -16,7 +16,7 @@ export default function Home() {
   useReveal();
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen selection:bg-primary/30">
       <Navbar />
       <Hero />
       <About />

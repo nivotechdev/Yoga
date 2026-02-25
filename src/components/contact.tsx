@@ -1,198 +1,165 @@
 
 "use client";
 
-import React, { useRef, useState } from "react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { Instagram, Mail, MapPin, ArrowUpRight } from "lucide-react";
+import React from "react";
+import { motion } from "framer-motion";
+import { Instagram, MapPin, MessageCircle, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 export function Contact() {
-  const containerRef = useRef<HTMLElement>(null);
-  
-  // Parallax effect for the background text
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
-  
-  const yParallax = useTransform(scrollYProgress, [0, 1], [0, -100]);
-
   return (
     <section 
       id="contact" 
-      ref={containerRef}
-      className="relative py-40 px-6 bg-background overflow-hidden selection:bg-accent selection:text-white"
+      className="relative py-24 md:py-40 px-6 bg-[#F9F7F2] overflow-hidden"
     >
-      {/* Editorial Background Text (Parallax) */}
-      <motion.div 
-        style={{ y: yParallax }}
-        className="absolute top-20 -right-20 pointer-events-none select-none"
-      >
-        <span className="font-headline text-[20vw] leading-none text-primary/5 italic whitespace-nowrap opacity-50">
-          Equilibrium
+      {/* Editorial Decorative Background */}
+      <div className="absolute top-10 right-[-5%] pointer-events-none select-none hidden lg:block">
+        <span className="font-headline text-[15vw] leading-none text-primary/5 italic whitespace-nowrap">
+          Concierge
         </span>
-      </motion.div>
+      </div>
 
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-24 items-start relative z-10">
-          
-          {/* Left Column: Editorial Content */}
-          <div className="space-y-16">
-            <div className="overflow-hidden">
-              <motion.h2 
-                initial={{ y: "100%" }}
-                whileInView={{ y: 0 }}
-                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-                viewport={{ once: true }}
-                className="font-headline text-6xl md:text-8xl lg:text-9xl text-foreground leading-[0.9] tracking-tighter"
-              >
-                Sua jornada <br /> 
-                <span className="italic text-accent">começa</span> aqui.
-              </motion.h2>
-            </div>
-
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 1 }}
-              viewport={{ once: true }}
-              className="font-body text-xl md:text-2xl text-muted-foreground font-light max-w-md leading-relaxed"
-            >
-              Um convite à quietude e ao encontro com sua essência mais profunda. Permita-nos guiar sua prática em um ambiente de serenidade absoluta.
-            </motion.p>
-
-            {/* Structured Info */}
-            <div className="grid gap-12 pt-8">
-              <InfoItem 
-                icon={MapPin}
-                label="Endereço"
-                value="Av. das Palmeiras, 1000 — Jardim Zen, São Paulo"
-                href="https://maps.google.com"
-              />
-              <div className="flex flex-wrap gap-x-20 gap-y-12">
-                <InfoItem 
-                  icon={Mail}
-                  label="E-mail"
-                  value="concierge@equilibrium.com"
-                  href="mailto:concierge@equilibrium.com"
-                />
-                <InfoItem 
-                  icon={Instagram}
-                  label="Instagram"
-                  value="@equilibriumyoga"
-                  href="https://instagram.com/equilibriumyoga"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column: The Magnetic CTA */}
-          <div className="lg:h-full flex flex-col justify-end lg:items-end pt-20 lg:pt-0">
-            <MagneticButton />
-          </div>
+      <div className="max-w-5xl mx-auto relative z-10">
+        <div className="text-center md:text-left mb-16 md:mb-24">
+          <motion.span 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-accent text-[10px] md:text-xs tracking-[0.5em] uppercase mb-4 block font-semibold"
+          >
+            Atendimento Exclusivo
+          </motion.span>
+          <motion.h2 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true }}
+            className="font-headline text-5xl md:text-7xl lg:text-8xl text-foreground leading-[1.1] tracking-tighter"
+          >
+            Sua jornada <br /> 
+            <span className="italic text-accent">começa</span> aqui.
+          </motion.h2>
         </div>
+
+        {/* Mobile-First Deep Linking Grid */}
+        <div className="grid gap-4 md:grid-cols-3 mb-12">
+          <ContactCard 
+            icon={MessageCircle}
+            label="WhatsApp"
+            value="Atendimento Exclusivo"
+            href="https://wa.me/5511987654321"
+            delay={0.1}
+          />
+          <ContactCard 
+            icon={MapPin}
+            label="Endereço"
+            value="Visite nosso Estúdio"
+            subValue="Jardim Zen, São Paulo"
+            href="https://maps.google.com"
+            delay={0.2}
+          />
+          <ContactCard 
+            icon={Instagram}
+            label="Instagram"
+            value="Nossa Comunidade"
+            href="https://instagram.com/equilibriumyoga"
+            delay={0.3}
+          />
+        </div>
+
+        {/* The Majestic Final CTA */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          viewport={{ once: true }}
+          className="pt-8"
+        >
+          <Link 
+            href="https://wa.me/5511987654321"
+            target="_blank"
+            className="group relative flex items-center justify-center w-full h-20 md:h-24 bg-primary text-white rounded-2xl overflow-hidden shadow-2xl transition-all hover:scale-[1.02] active:scale-[0.98]"
+          >
+            {/* Pulsing Glow Effect */}
+            <motion.div 
+              animate={{ 
+                opacity: [0.3, 0.6, 0.3],
+                scale: [1, 1.05, 1] 
+              }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute inset-0 bg-white/10"
+            />
+            
+            <div className="relative z-10 flex items-center gap-4">
+              <span className="font-body text-lg md:text-xl tracking-widest uppercase font-medium">
+                Agendar minha primeira prática
+              </span>
+              <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-500" />
+            </div>
+          </Link>
+          <p className="text-center mt-6 text-muted-foreground/60 text-xs tracking-widest uppercase font-light">
+            Vagas limitadas para novas turmas mensais
+          </p>
+        </motion.div>
       </div>
     </section>
   );
 }
 
-function InfoItem({ icon: Icon, label, value, href }: { icon: any, label: string, value: string, href: string }) {
+function ContactCard({ 
+  icon: Icon, 
+  label, 
+  value, 
+  subValue, 
+  href, 
+  delay 
+}: { 
+  icon: any, 
+  label: string, 
+  value: string, 
+  subValue?: string, 
+  href: string,
+  delay: number 
+}) {
   return (
-    <motion.div 
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay, duration: 0.8 }}
       viewport={{ once: true }}
-      className="group"
     >
-      <span className="block text-[10px] uppercase tracking-[0.4em] text-accent mb-3 font-semibold">
-        {label}
-      </span>
       <Link 
         href={href} 
         target="_blank"
-        className="font-headline text-2xl text-foreground hover:text-accent transition-colors duration-500 flex items-center gap-3"
+        className="block p-8 bg-white/50 backdrop-blur-sm border border-black/[0.03] rounded-3xl group transition-all hover:bg-white hover:shadow-xl hover:shadow-primary/5 active:scale-[0.98]"
       >
-        {value}
-        <ArrowUpRight className="w-5 h-5 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-500" />
+        <div className="flex flex-col h-full">
+          <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6 transition-colors group-hover:bg-primary group-hover:text-white">
+            <Icon className="w-5 h-5" />
+          </div>
+          
+          <span className="text-[10px] uppercase tracking-[0.3em] text-accent mb-2 font-bold">
+            {label}
+          </span>
+          
+          <h4 className="font-headline text-2xl text-foreground mb-1">
+            {value}
+          </h4>
+          
+          {subValue && (
+            <p className="text-sm text-muted-foreground font-light tracking-wide">
+              {subValue}
+            </p>
+          )}
+          
+          <div className="mt-8 flex items-center text-xs tracking-widest uppercase font-medium text-primary/40 group-hover:text-primary transition-colors">
+            Acessar agora
+            <ArrowRight className="w-3 h-3 ml-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+          </div>
+        </div>
       </Link>
     </motion.div>
-  );
-}
-
-function MagneticButton() {
-  const buttonRef = useRef<HTMLDivElement>(null);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!buttonRef.current) return;
-    const { clientX, clientY } = e;
-    const { left, top, width, height } = buttonRef.current.getBoundingClientRect();
-    const x = clientX - (left + width / 2);
-    const y = clientY - (top + height / 2);
-    
-    // Magnetic strength
-    setPosition({ x: x * 0.35, y: y * 0.35 });
-  };
-
-  const handleMouseLeave = () => {
-    setPosition({ x: 0, y: 0 });
-  };
-
-  const springConfig = { damping: 15, stiffness: 150 };
-  const springX = useSpring(position.x, springConfig);
-  const springY = useSpring(position.y, springConfig);
-
-  // Sync springs with position
-  React.useEffect(() => {
-    springX.set(position.x);
-    springY.set(position.y);
-  }, [position, springX, springY]);
-
-  return (
-    <div 
-      className="relative w-80 h-80 flex items-center justify-center"
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-    >
-      <motion.div
-        ref={buttonRef}
-        style={{ x: springX, y: springY }}
-        className="w-64 h-64 rounded-full bg-foreground flex items-center justify-center p-8 text-center cursor-pointer group shadow-2xl overflow-hidden relative"
-      >
-        {/* Animated background on hover */}
-        <motion.div 
-          initial={{ y: "100%" }}
-          whileHover={{ y: 0 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute inset-0 bg-accent z-0"
-        />
-        
-        <Link 
-          href="https://wa.me/5511987654321" 
-          target="_blank"
-          className="relative z-10 flex flex-col items-center gap-4 text-background group-hover:text-white transition-colors duration-500"
-        >
-          <span className="font-body text-[10px] uppercase tracking-[0.5em] mb-2 font-medium">
-            Atendimento Exclusivo
-          </span>
-          <span className="font-headline text-3xl leading-tight">
-            Falar com nosso <br /> Concierge
-          </span>
-          <ArrowUpRight className="w-8 h-8 mt-4 animate-bounce" />
-        </Link>
-      </motion.div>
-
-      {/* Outer ring decorative */}
-      <motion.div 
-        animate={{ 
-          scale: [1, 1.05, 1],
-          opacity: [0.1, 0.2, 0.1]
-        }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute inset-0 border border-foreground/10 rounded-full pointer-events-none"
-      />
-    </div>
   );
 }
