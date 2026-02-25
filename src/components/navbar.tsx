@@ -47,7 +47,7 @@ export function Navbar() {
     <header className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
       <div
         className={cn(
-          "w-full transition-all duration-500 ease-[0.22,1,0.36,1] flex items-center pointer-events-auto overflow-hidden",
+          "w-full transition-all duration-500 ease-dynamic-island flex items-center pointer-events-auto overflow-hidden",
           isScrolled
             ? "max-w-4xl h-16 bg-white/80 backdrop-blur-lg rounded-full border border-white/20 shadow-xl shadow-black/5 px-6"
             : "max-w-7xl h-20 bg-transparent px-4"

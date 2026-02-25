@@ -1,4 +1,3 @@
-
 import type {Config} from 'tailwindcss';
 
 export default {
@@ -14,6 +13,9 @@ export default {
         body: ['PT Sans', 'sans-serif'],
         headline: ['Alegreya', 'serif'],
         code: ['monospace'],
+      },
+      transitionTimingFunction: {
+        'dynamic-island': 'cubic-bezier(0.22, 1, 0.36, 1)',
       },
       colors: {
         background: 'hsl(var(--background))',
