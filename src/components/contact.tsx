@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from "react";
@@ -52,13 +53,10 @@ export function Contact() {
         >
           <div className="space-y-8 text-xl md:text-2xl text-muted-foreground font-light leading-relaxed border-l-2 border-accent/20 pl-6 md:pl-10">
             <p className="text-foreground font-medium italic">
-              O convite para a sua metamorfose pessoal está feito. No Gandha Yoga, transcendemos a prática física para oferecer um refúgio de silêncio e poder.
+              No Gandha Yoga, transcendemos a prática física para oferecer um refúgio de silêncio e poder.
             </p>
             <p>
-              Em nossas turmas ultra-exclusivas, você não é apenas um aluno, mas parte de uma linhagem que valoriza a alta performance da mente e o descanso profundo do espírito. Troque o cansaço pela clareza absoluta.
-            </p>
-            <p className="text-lg md:text-xl italic opacity-80">
-              Agende sua aula agora e sinta o impacto imediato de um corpo em harmonia majestosa com a essência. O luxo de estar presente é a sua nova realidade.
+              Em turmas ultra-exclusivas, você encontra a harmonia entre a alta performance da mente e o descanso profundo do espírito. O luxo de estar presente é a sua nova realidade.
             </p>
           </div>
         </motion.div>
