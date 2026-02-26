@@ -1,6 +1,7 @@
 "use client";
 
 import { CalendarDays, Clock } from "lucide-react";
+import Link from "next/link";
 import {
   Carousel,
   CarouselContent,
@@ -33,6 +34,8 @@ const scheduleData = [
 ];
 
 export function Schedule() {
+  const whatsappNumber = "5511987654321";
+
   return (
     <section id="schedule" className="py-32 px-6 bg-background relative overflow-hidden">
       {/* Elementos decorativos de fundo */}
@@ -83,17 +86,24 @@ export function Schedule() {
                     </div>
 
                     <div className="space-y-3 mt-auto">
-                      {item.times.map((time) => (
-                        <div
-                          key={time}
-                          className="flex items-center justify-between p-4 rounded-2xl bg-background/50 border border-transparent hover:border-accent/20 hover:bg-white transition-all duration-300 group/time cursor-pointer"
-                        >
-                          <span className="text-foreground/70 font-medium group-hover/time:text-accent transition-colors">
-                            {time}
-                          </span>
-                          <Clock className="w-4 h-4 text-primary/30 group-hover/time:text-accent group-hover/time:scale-110 transition-all" />
-                        </div>
-                      ))}
+                      {item.times.map((time) => {
+                        const message = encodeURIComponent(`Olá! Gostaria de saber se há vaga para a prática de ${item.day} às ${time} no Gandha Yoga.`);
+                        const waLink = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+                        return (
+                          <Link
+                            key={time}
+                            href={waLink}
+                            target="_blank"
+                            className="flex items-center justify-between p-4 rounded-2xl bg-background/50 border border-transparent hover:border-accent/20 hover:bg-white transition-all duration-300 group/time cursor-pointer"
+                          >
+                            <span className="text-foreground/70 font-medium group-hover/time:text-accent transition-colors">
+                              {time}
+                            </span>
+                            <Clock className="w-4 h-4 text-primary/30 group-hover/time:text-accent group-hover/time:scale-110 transition-all" />
+                          </Link>
+                        );
+                      })}
                     </div>
                   </div>
                 </CarouselItem>
@@ -116,9 +126,9 @@ export function Schedule() {
 
         <div className="mt-20 text-center reveal">
           <p className="text-muted-foreground font-light italic text-sm">
-            * Aulas exclusivas com no máximo 8 praticantes por turma. 
+            * Clique em um horário para consultar disponibilidade via WhatsApp Concierge.
             <br />
-            Agende sua experiência no Gandha com antecedência para garantir sua vaga.
+            Aulas exclusivas com no máximo 8 praticantes por turma.
           </p>
         </div>
       </div>
