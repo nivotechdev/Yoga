@@ -80,7 +80,7 @@ export function Navbar() {
                 className={cn(
                   "text-sm font-medium transition-colors duration-500 whitespace-nowrap",
                   isScrolled 
-                    ? "text-foreground/80 hover:text-accent" 
+                    ? "text-foreground/80 hover:text-primary" 
                     : "text-white/90 hover:text-white"
                 )}
               >
@@ -93,8 +93,8 @@ export function Navbar() {
             <Button 
               variant="default" 
               className={cn(
-                "rounded-full px-6 transition-all duration-300 hover:scale-105",
-                isScrolled ? "bg-primary" : "bg-primary/90 text-white"
+                "rounded-full px-6 transition-all duration-300 hover:scale-105 active:scale-95",
+                isScrolled ? "bg-primary text-white" : "bg-white text-primary"
               )}
               asChild
             >
@@ -103,6 +103,7 @@ export function Navbar() {
           </div>
         </div>
 
+        {/* Mobile Navbar */}
         <div className="md:hidden flex justify-between items-center w-full">
           <Link href="/" className="flex items-center gap-2 shrink-0">
             <div className="relative h-8 w-32">
@@ -124,14 +125,14 @@ export function Navbar() {
                 variant="ghost" 
                 size="icon" 
                 className={cn(
-                  "transition-colors duration-500",
-                  isScrolled ? "text-primary" : "text-white"
+                  "transition-colors duration-500 rounded-full h-10 w-10 active:scale-90",
+                  isScrolled ? "text-primary bg-primary/5" : "text-white bg-white/10"
                 )}
               >
-                <Menu className="w-6 h-6" />
+                <Menu className="w-5 h-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="flex flex-col w-[300px] sm:w-[350px] bg-background">
+            <SheetContent side="right" className="flex flex-col w-[300px] sm:w-[350px] bg-background border-l-0 rounded-l-[2rem] shadow-2xl">
               <SheetHeader className="text-left mb-8">
                 <SheetTitle>
                   <Link href="/" className="flex items-center gap-2" onClick={handleLinkClick}>
@@ -154,7 +155,7 @@ export function Navbar() {
                       <Link
                         href={link.href}
                         onClick={handleLinkClick}
-                        className="text-2xl font-headline text-foreground/80 hover:text-primary transition-colors block"
+                        className="text-2xl font-headline text-foreground/80 hover:text-primary transition-all active:translate-x-2 block"
                       >
                         {link.name}
                       </Link>
@@ -165,14 +166,14 @@ export function Navbar() {
 
               <div className="mt-auto space-y-8 pb-6">
                 <div className="flex gap-6 justify-center text-primary/60">
-                  <Link href={instagramUrl} target="_blank" className="hover:text-primary transition-colors">
+                  <Link href={instagramUrl} target="_blank" className="hover:text-primary transition-colors active:scale-125">
                     <Instagram className="w-6 h-6" />
                   </Link>
-                  <Link href="https://wa.me/5511987654321" target="_blank" className="hover:text-primary transition-colors">
+                  <Link href="https://wa.me/5511987654321" target="_blank" className="hover:text-primary transition-colors active:scale-125">
                     <MessageCircle className="w-6 h-6" />
                   </Link>
                 </div>
-                <Button className="w-full h-14 rounded-full text-lg font-medium" asChild onClick={handleLinkClick}>
+                <Button className="w-full h-14 rounded-full text-lg font-medium shadow-lg hover:shadow-primary/20 active:scale-95 transition-all" asChild onClick={handleLinkClick}>
                   <Link href="#contact">Agendar Agora</Link>
                 </Button>
               </div>
