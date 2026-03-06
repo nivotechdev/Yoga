@@ -10,7 +10,7 @@
     --card-foreground: 25 20% 30%;
     --popover: 48 33% 96%;
     --popover-foreground: 25 20% 30%;
-    --primary: 109 21% 69%; /* #A8BFA3 - Sage Green */
+    --primary: 26 91% 58%; /* #f58831 - Sunset Orange */
     --primary-foreground: 48 33% 96%;
     --secondary: 48 33% 96%; /* Warm White */
     --secondary-foreground: 25 20% 30%;
@@ -22,9 +22,9 @@
     --destructive-foreground: 0 0% 98%;
     --border: 25 20% 80%;
     --input: 25 20% 85%;
-    --ring: 109 21% 69%;
+    --ring: 26 91% 58%;
     --radius: 0.5rem;
-    --chart-1: 109 21% 69%;
+    --chart-1: 26 91% 58%;
     --chart-2: 42 50% 57%;
     --chart-3: 25 20% 30%;
     --chart-4: 42 33% 89%;
@@ -38,7 +38,7 @@
     --card-foreground: 48 33% 96%;
     --popover: 25 20% 15%;
     --popover-foreground: 48 33% 96%;
-    --primary: 109 21% 69%;
+    --primary: 26 91% 58%;
     --primary-foreground: 25 20% 10%;
     --secondary: 25 20% 20%;
     --secondary-foreground: 48 33% 96%;
@@ -50,7 +50,7 @@
     --destructive-foreground: 0 0% 98%;
     --border: 25 20% 25%;
     --input: 25 20% 25%;
-    --ring: 109 21% 69%;
+    --ring: 26 91% 58%;
   }
 }
 
