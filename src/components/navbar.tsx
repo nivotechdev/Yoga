@@ -57,7 +57,10 @@ export function Navbar() {
         <div className="hidden md:grid grid-cols-3 w-full items-center">
           <div className="flex justify-start">
             <Link href="/" className="flex items-center gap-2 group shrink-0">
-              <div className="relative h-10 w-40">
+              <div className={cn(
+                "relative h-10 w-40 transition-transform duration-500",
+                isScrolled ? "scale-90" : "scale-100"
+              )}>
                 <Image
                   src={logoUrl}
                   alt="Gandha Yoga"
@@ -106,7 +109,10 @@ export function Navbar() {
         {/* Mobile Navbar */}
         <div className="md:hidden flex justify-between items-center w-full">
           <Link href="/" className="flex items-center gap-2 shrink-0">
-            <div className="relative h-8 w-32">
+            <div className={cn(
+                "relative h-8 w-32 transition-transform duration-500",
+                isScrolled ? "scale-95" : "scale-100"
+              )}>
               <Image
                 src={logoUrl}
                 alt="Gandha Yoga"
