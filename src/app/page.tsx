@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useReveal } from "@/hooks/use-reveal";
@@ -8,6 +7,7 @@ import { About } from "@/components/about";
 import { Services } from "@/components/services";
 import { Schedule } from "@/components/schedule";
 import { Differentials } from "@/components/differentials";
+import { Location } from "@/components/location";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
 import { Toaster } from "@/components/ui/toaster";
@@ -23,6 +23,7 @@ export default function Home() {
       <Services />
       <Schedule />
       <Differentials />
+      <Location />
       <Contact />
       <Footer />
       <Toaster />
