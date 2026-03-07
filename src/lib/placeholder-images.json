@@ -47,6 +47,18 @@
       "description": "One-on-one yoga class",
       "imageUrl": "https://images.unsplash.com/photo-1758599879693-9e06f55a4ded?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwcml2YXRlJTIweW9nYXxlbnwwfHx8fDE3NzEyODU3NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "private yoga"
+    },
+    {
+      "id": "teacher-neura",
+      "description": "Neura Paludo, Yoga Instructor",
+      "imageUrl": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx5b2dhJTIwdGVhY2hlciUyMHdvbWFufGVufDB8fHx8MTc3MTI4NTc1MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "yoga teacher woman"
+    },
+    {
+      "id": "teacher-aline",
+      "description": "Aline de Vargas, Yoga and Therapy Instructor",
+      "imageUrl": "https://images.unsplash.com/photo-1594381898411-846e7d193883?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx5b2dhJTIwcHJvZmVzc29yfGVufDB8fHx8MTc3MTI4NTc1MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "yoga instructor"
     }
   ]
 }

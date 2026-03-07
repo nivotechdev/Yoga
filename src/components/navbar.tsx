@@ -33,11 +33,11 @@ export function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Práticas", href: "#services" },
-    { name: "Horários", href: "#schedule" },
-    { name: "Sobre", href: "#about" },
-    { name: "Diferenciais", href: "#differentials" },
-    { name: "Contato", href: "#contact" },
+    { name: "Práticas", href: "/#services" },
+    { name: "Horários", href: "/#schedule" },
+    { name: "Profissionais", href: "/profissionais" },
+    { name: "Sobre", href: "/#about" },
+    { name: "Contato", href: "/#contact" },
   ];
 
   const handleLinkClick = useCallback(() => {
@@ -58,7 +58,7 @@ export function Navbar() {
           <div className="flex justify-start">
             <Link href="/" className="flex items-center gap-2 group shrink-0">
               <div className={cn(
-                "relative h-10 w-40 transition-transform duration-500",
+                "relative h-10 w-40 transition-all duration-500",
                 isScrolled ? "scale-90" : "scale-100"
               )}>
                 <Image
@@ -101,7 +101,7 @@ export function Navbar() {
               )}
               asChild
             >
-              <Link href="#contact">Agendar</Link>
+              <Link href="/#contact">Agendar</Link>
             </Button>
           </div>
         </div>
@@ -110,7 +110,7 @@ export function Navbar() {
         <div className="md:hidden flex justify-between items-center w-full">
           <Link href="/" className="flex items-center gap-2 shrink-0">
             <div className={cn(
-                "relative h-8 w-32 transition-transform duration-500",
+                "relative h-8 w-32 transition-all duration-500",
                 isScrolled ? "scale-95" : "scale-100"
               )}>
               <Image
@@ -180,7 +180,7 @@ export function Navbar() {
                   </Link>
                 </div>
                 <Button className="w-full h-14 rounded-full text-lg font-medium shadow-lg hover:shadow-primary/20 active:scale-95 transition-all" asChild onClick={handleLinkClick}>
-                  <Link href="#contact">Agendar Agora</Link>
+                  <Link href="/#contact">Agendar Agora</Link>
                 </Button>
               </div>
             </SheetContent>
