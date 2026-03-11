@@ -72,7 +72,7 @@ export function Services() {
               >
                 <div className="bg-card h-full p-6 rounded-[2.5rem] border border-primary/5 shadow-sm transition-all duration-700 hover:shadow-2xl hover:-translate-y-2 flex flex-col">
                   {/* Image Container - Inset inside the card */}
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] mb-8 shadow-inner">
+                  <div className="relative aspect-[3/2] overflow-hidden rounded-[2rem] mb-8 shadow-inner">
                     <Image
                       src={img?.imageUrl || ""}
                       alt={practice.title}
@@ -89,12 +89,12 @@ export function Services() {
                       {practice.title}
                     </h3>
                     
-                    <p className="text-muted-foreground leading-relaxed font-light text-sm mb-8">
+                    <p className="text-muted-foreground leading-relaxed font-light text-sm mb-4">
                       {practice.description}
                     </p>
 
                     {/* Benefits Icons - Sticky at bottom of card */}
-                    <div className="mt-auto pt-6 border-t border-primary/10 flex items-center justify-between">
+                    <div className="mt-auto pt-4 border-t border-primary/10 flex items-center justify-between">
                       {practice.benefits.map((benefit, bIndex) => (
                         <div key={bIndex} className="flex flex-col items-center gap-2 group/icon">
                           <div className="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center text-primary transition-all duration-500 group-hover/icon:bg-primary group-hover/icon:text-white group-hover/icon:scale-110">
