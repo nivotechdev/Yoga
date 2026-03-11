@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from "react";
@@ -6,7 +7,6 @@ import { ArrowRight, Instagram, MessageCircle, MapPin, Mail, Phone } from "lucid
 import Link from "next/link";
 
 export function Contact() {
-  const instagramUrl = "https://www.instagram.com/gandhayoga/";
   const whatsappLink = "https://wa.me/5554999882995";
   const email = "devargasaline@gmail.com";
   const phoneDisplay = "(54) 99988-2995";
@@ -102,7 +102,7 @@ export function Contact() {
             <Link 
               href={whatsappLink}
               target="_blank"
-              className="group relative flex items-center justify-center w-full md:w-max md:px-12 h-16 bg-primary text-white rounded-2xl overflow-hidden shadow-2xl transition-all"
+              className="group relative flex items-center justify-center w-full md:w-max md:px-10 h-14 bg-primary text-white rounded-2xl overflow-hidden shadow-2xl transition-all"
             >
               <motion.div 
                 animate={{ 

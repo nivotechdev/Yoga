@@ -26,7 +26,7 @@ export function Hero() {
   return (
     <section 
       ref={containerRef}
-      className="relative h-screen w-full flex items-center justify-center overflow-hidden"
+      className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black"
     >
       {/* Background Video/Image with Parallax */}
       <motion.div 
@@ -38,8 +38,9 @@ export function Hero() {
           muted
           loop
           playsInline
+          preload="auto"
           poster={heroImg?.imageUrl}
-          className="absolute inset-0 w-full h-full object-cover brightness-[0.6]"
+          className="absolute inset-0 w-full h-full object-cover"
         >
           <source src={videoUrl} type="video/mp4" />
           {heroImg && (
@@ -52,7 +53,8 @@ export function Hero() {
             />
           )}
         </video>
-        <div className="absolute inset-0 bg-black/20" />
+        {/* Quality fix: Separate overlay for brightness instead of applying to video tag */}
+        <div className="absolute inset-0 bg-black/40 backdrop-brightness-[0.7]" />
       </motion.div>
 
       {/* Content with Smooth Reveal and Scroll Animation */}
@@ -93,13 +95,13 @@ export function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Scroll indicator - Enhanced Animation */}
+      {/* Scroll indicator - Enhanced Centering and Animation */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
         style={{ opacity: opacityContent }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center"
+        className="absolute bottom-12 left-0 right-0 z-20 flex flex-col items-center justify-center pointer-events-none"
       >
         <div className="w-[26px] h-[44px] border-2 border-white/30 rounded-full flex justify-center pt-2 backdrop-blur-[2px]">
           <motion.div 
