@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from "react";
@@ -109,7 +108,7 @@ export function Contact() {
             <Link 
               href="https://wa.me/5511987654321"
               target="_blank"
-              className="group relative flex items-center justify-center w-full md:w-max md:px-16 h-20 md:h-24 bg-primary text-white rounded-2xl overflow-hidden shadow-2xl transition-all"
+              className="group relative flex items-center justify-center w-full md:w-max md:px-12 h-16 md:h-20 bg-primary text-white rounded-2xl overflow-hidden shadow-2xl transition-all"
             >
               {/* Pulsing Glow Effect */}
               <motion.div 
@@ -122,10 +121,10 @@ export function Contact() {
               />
               
               <div className="relative z-10 flex items-center gap-4">
-                <span className="font-body text-lg md:text-xl tracking-widest uppercase font-medium">
-                  Agendar minha primeira prática
+                <span className="font-body text-base md:text-lg tracking-[0.2em] uppercase font-bold">
+                  AGENDAR MINHA PRÁTICA
                 </span>
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-500" />
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-500" />
               </div>
             </Link>
           </motion.div>

@@ -65,7 +65,10 @@ export function Navbar() {
                   src={logoUrl}
                   alt="Gandha Yoga"
                   fill
-                  className="object-contain transition-all duration-500"
+                  className={cn(
+                    "object-contain transition-all duration-500",
+                    !isScrolled && "brightness-0 invert"
+                  )}
                   priority
                 />
               </div>
@@ -114,7 +117,10 @@ export function Navbar() {
                 src={logoUrl}
                 alt="Gandha Yoga"
                 fill
-                className="object-contain transition-all duration-500"
+                className={cn(
+                  "object-contain transition-all duration-500",
+                  !isScrolled && "brightness-0 invert"
+                )}
               />
             </div>
           </Link>
