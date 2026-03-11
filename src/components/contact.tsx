@@ -2,11 +2,14 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Instagram, MessageCircle, MapPin } from "lucide-react";
+import { ArrowRight, Instagram, MessageCircle, MapPin, Mail, Phone } from "lucide-react";
 import Link from "next/link";
 
 export function Contact() {
   const instagramUrl = "https://www.instagram.com/gandhayoga/";
+  const whatsappLink = "https://wa.me/5554999882995";
+  const email = "devargasaline@gmail.com";
+  const phoneDisplay = "(54) 99988-2995";
 
   return (
     <section 
@@ -60,57 +63,47 @@ export function Contact() {
           </div>
         </motion.div>
 
-        {/* Action Buttons for Mobile UX (Direct Access) */}
-        <div className="flex flex-col gap-4 mb-16 md:hidden">
+        {/* Action Buttons for Mobile/Desktop (Direct Access) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-16">
           <Link 
-            href="https://wa.me/5511987654321"
-            className="flex items-center gap-4 p-6 bg-white rounded-2xl shadow-sm border border-border/50 active:scale-95 transition-all"
-          >
-            <MessageCircle className="text-primary w-6 h-6" />
-            <div className="text-left">
-              <span className="block text-xs uppercase tracking-widest text-accent font-bold">WhatsApp</span>
-              <span className="text-foreground font-medium">Atendimento Concierge</span>
-            </div>
-          </Link>
-          <Link 
-            href={instagramUrl}
+            href={whatsappLink}
             target="_blank"
-            className="flex items-center gap-4 p-6 bg-white rounded-2xl shadow-sm border border-border/50 active:scale-95 transition-all"
+            className="flex items-center gap-4 p-6 bg-white rounded-2xl shadow-sm border border-border/50 hover:border-primary/30 transition-all group"
           >
-            <Instagram className="text-primary w-6 h-6" />
+            <MessageCircle className="text-primary w-6 h-6 group-hover:scale-110 transition-transform" />
             <div className="text-left">
-              <span className="block text-xs uppercase tracking-widest text-accent font-bold">Instagram</span>
-              <span className="text-foreground font-medium">Nossa Comunidade</span>
+              <span className="block text-[10px] uppercase tracking-widest text-accent font-bold">WhatsApp</span>
+              <span className="text-foreground font-medium">{phoneDisplay}</span>
             </div>
           </Link>
-          <div className="flex items-center gap-4 p-6 bg-white rounded-2xl shadow-sm border border-border/50">
-            <MapPin className="text-primary w-6 h-6" />
+          <Link 
+            href={`mailto:${email}`}
+            className="flex items-center gap-4 p-6 bg-white rounded-2xl shadow-sm border border-border/50 hover:border-primary/30 transition-all group"
+          >
+            <Mail className="text-primary w-6 h-6 group-hover:scale-110 transition-transform" />
             <div className="text-left">
-              <span className="block text-xs uppercase tracking-widest text-accent font-bold">Endereço</span>
-              <span className="text-foreground font-medium">Rua da Harmonia, 108 - Jardins</span>
+              <span className="block text-[10px] uppercase tracking-widest text-accent font-bold">Email</span>
+              <span className="text-foreground font-medium">{email}</span>
             </div>
-          </div>
+          </Link>
         </div>
 
         {/* The Majestic Final CTA */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          viewport={{ once: true }}
-          className="relative group"
-        >
+        <div className="relative group">
           <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            viewport={{ once: true }}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className="relative"
           >
             <Link 
-              href="https://wa.me/5511987654321"
+              href={whatsappLink}
               target="_blank"
-              className="group relative flex items-center justify-center w-full md:w-max md:px-12 h-16 md:h-20 bg-primary text-white rounded-2xl overflow-hidden shadow-2xl transition-all"
+              className="group relative flex items-center justify-center w-full md:w-max md:px-12 h-16 bg-primary text-white rounded-2xl overflow-hidden shadow-2xl transition-all"
             >
-              {/* Pulsing Glow Effect */}
               <motion.div 
                 animate={{ 
                   opacity: [0.3, 0.6, 0.3],
@@ -121,7 +114,7 @@ export function Contact() {
               />
               
               <div className="relative z-10 flex items-center gap-4">
-                <span className="font-body text-base md:text-lg tracking-[0.2em] uppercase font-bold">
+                <span className="font-body text-sm md:text-base tracking-[0.2em] uppercase font-bold">
                   AGENDAR MINHA PRÁTICA
                 </span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-500" />
@@ -131,7 +124,7 @@ export function Contact() {
           <p className="mt-8 text-muted-foreground/60 text-[10px] md:text-xs tracking-[0.3em] uppercase font-light">
             Vagas limitadas para novas turmas mensais • Atendimento Personalizado
           </p>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

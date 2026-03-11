@@ -34,7 +34,7 @@ const scheduleData = [
 ];
 
 export function Schedule() {
-  const whatsappNumber = "5511987654321";
+  const whatsappNumber = "5554999882995";
 
   return (
     <section id="schedule" className="py-32 px-6 bg-background relative overflow-hidden">

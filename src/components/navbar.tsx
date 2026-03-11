@@ -20,6 +20,7 @@ export function Navbar() {
   
   const logoUrl = "https://whfdrrdozhyavyflgaxo.supabase.co/storage/v1/object/sign/yoga/yoga-removebg-preview.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jOWY1OGE2Ni03MDFhLTRhNDQtOWJhZC0zOGRkNmVkYTNhODAiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ5b2dhL3lvZ2EtcmVtb3ZlYmctcHJldmlldy5wbmciLCJpYXQiOjE3NzIwMzEyNzQsImV4cCI6MzMzMDgwMzEyNzR9.KpEnBPjF57rgceI_Ka7v5gWMmhyYF901NYXC81Bomzk";
   const instagramUrl = "https://www.instagram.com/gandhayoga/";
+  const whatsappUrl = "https://wa.me/5554999882995";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -175,7 +176,7 @@ export function Navbar() {
                   <Link href={instagramUrl} target="_blank" className="hover:text-primary transition-colors active:scale-125">
                     <Instagram className="w-6 h-6" />
                   </Link>
-                  <Link href="https://wa.me/5511987654321" target="_blank" className="hover:text-primary transition-colors active:scale-125">
+                  <Link href={whatsappUrl} target="_blank" className="hover:text-primary transition-colors active:scale-125">
                     <MessageCircle className="w-6 h-6" />
                   </Link>
                 </div>
