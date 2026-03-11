@@ -14,8 +14,8 @@ const practices = [
     imageId: "vinyasa-yoga",
   },
   {
-    title: "Yoga Restaurativa",
-    description: "Posturas sustentadas para relaxamento profundo e recuperação do corpo.",
+    title: "Breathwork Integrativo",
+    description: "Técnicas de respiração consciente para a autorregulação do sistema nervoso, promovendo clareza mental e equilíbrio profundo.",
     imageId: "restorative-yoga",
   },
   {
@@ -52,7 +52,7 @@ export function Services() {
                     />
                   </div>
                   <CardHeader>
-                    <CardTitle className="font-headline text-2xl text-foreground group-hover:text-accent transition-colors">
+                    <CardTitle className="font-headline text-2xl text-foreground group-hover:text-primary transition-colors">
                       {practice.title}
                     </CardTitle>
                   </CardHeader>
