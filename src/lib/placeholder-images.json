@@ -21,25 +21,25 @@
     {
       "id": "hatha-yoga",
       "description": "Hatha yoga practice",
-      "imageUrl": "https://images.unsplash.com/photo-1447452001602-7090c7ab2db3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxoYXRoYSUyMHlvZ2F8ZW58MHx8fHwxNzcxMjg1NzUxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://whfdrrdozhyavyflgaxo.supabase.co/storage/v1/object/sign/yoga/neura.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jOWY1OGE2Ni03MDFhLTRhNDQtOWJhZC0zOGRkNmVkYTNhODAiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ5b2dhL25ldXJhLmpwZWciLCJpYXQiOjE3NzMyMzgzMjAsImV4cCI6MzMzMDkyMzgzMjB9.IwfqBLFZYTltjogqD0iePuaEJu2AEdOgpmfgv1NGIb0",
       "imageHint": "hatha yoga"
     },
     {
       "id": "vinyasa-yoga",
       "description": "Vinyasa flow practice",
-      "imageUrl": "https://images.unsplash.com/photo-1767611090583-8eb2f497734d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx2aW55YXNhJTIwZmxvd3xlbnwwfHx8fDE3NzEyODU3NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://whfdrrdozhyavyflgaxo.supabase.co/storage/v1/object/sign/yoga/WhatsApp%20Image%202026-03-02%20at%2019.26.09.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jOWY1OGE2Ni03MDFhLTRhNDQtOWJhZC0zOGRkNmVkYTNhODAiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ5b2dhL1doYXRzQXBwIEltYWdlIDIwMjYtMDMtMDIgYXQgMTkuMjYuMDkuanBlZyIsImlhdCI6MTc3MzIzODQyMywiZXhwIjozMzMwOTIzODQyM30.Iy8YeW9ZdwkcJmzOy92iRyDkM9oaX4PueEmyvvA2KGQ",
       "imageHint": "vinyasa flow"
     },
     {
       "id": "restorative-yoga",
-      "description": "Restorative yoga practice",
-      "imageUrl": "https://images.unsplash.com/photo-1613602025754-04e1b4a24156?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxyZXN0b3JhdGl2ZSUyMHlvZ2F8ZW58MHx8fHwxNzcxMjg1NzUxfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "restorative yoga"
+      "description": "Breathwork Integrativo practice",
+      "imageUrl": "https://whfdrrdozhyavyflgaxo.supabase.co/storage/v1/object/sign/yoga/WhatsApp%20Image%202026-03-06%20at%2010.54.49.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jOWY1OGE2Ni03MDFhLTRhNDQtOWJhZC0zOGRkNmVkYTNhODAiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ5b2dhL1doYXRzQXBwIEltYWdlIDIwMjYtMDMtMDYgYXQgMTAuNTQuNDkuanBlZyIsImlhdCI6MTc3MzIzODQ2MSwiZXhwIjozMzMwOTIzODQ2MX0.uDfdzQi-AKUvnprHCYmM-m9AyR2eVTGfXS8n16D8hC0",
+      "imageHint": "breathwork integrative"
     },
     {
       "id": "meditation",
       "description": "Meditation practice",
-      "imageUrl": "https://images.unsplash.com/photo-1674505441276-3ef7c441d973?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtZWRpdGF0aW9uJTIwbWluZGZ1bG5lc3N8ZW58MHx8fHwxNzcxMjg1NzUxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://whfdrrdozhyavyflgaxo.supabase.co/storage/v1/object/sign/yoga/WhatsApp%20Image%202026-03-02%20at%2019.28.14.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jOWY1OGE2Ni03MDFhLTRhNDQtOWJhZC0zOGRkNmVkYTNhODAiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ5b2dhL1doYXRzQXBwIEltYWdlIDIwMjYtMDMtMDIgYXQgMTkuMjguMTQuanBlZyIsImlhdCI6MTc3MzIzODU3MiwiZXhwIjozMzMwOTIzODU3Mn0.IYcuLhh-Vctp0qqCVQ3lDPYbCubcN1ZkbY9hpM4j88M",
       "imageHint": "meditation mindfulness"
     },
     {
