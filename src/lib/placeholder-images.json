@@ -14,9 +14,9 @@
     },
     {
       "id": "about-img",
-      "description": "Zen interior with plants and natural wood",
-      "imageUrl": "https://images.unsplash.com/photo-1764776502723-cd26790363b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bWVkaXRhdGlvbiUyMHNwYWNlfGVufDB8fHx8MTc3MTI4NTc1MXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "meditation space"
+      "description": "Hatha Yoga practice image for about section",
+      "imageUrl": "https://whfdrrdozhyavyflgaxo.supabase.co/storage/v1/object/sign/yoga/hatha.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jOWY1OGE2Ni03MDFhLTRhNDQtOWJhZC0zOGRkNmVkYTNhODAiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ5b2dhL2hhdGhhLnBuZyIsImlhdCI6MTc3MzI0MDgwMSwiZXhwIjozMzMwOTI0MDgwMX0.UkgOT3wUpDJwtjPaERP6TXQUBOEnFV3Q2TpqzW7KfYY",
+      "imageHint": "hatha yoga"
     },
     {
       "id": "hatha-yoga",
@@ -50,8 +50,8 @@
     },
     {
       "id": "teacher-neura",
-      "description": "Neura Paludo, Yoga Instructor",
-      "imageUrl": "https://whfdrrdozhyavyflgaxo.supabase.co/storage/v1/object/sign/yoga/neura.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jOWY1OGE2Ni03MDFhLTRhNDQtOWJhZC0zOGRkNmVkYTNhODAiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ5b2dhL25ldXJhLmpwZWciLCJpYXQiOjE3NzMyMzY5NTUsImV4cCI6MzMzMDkyMzY5NTV9.ox2Srl2cfVdHXMfosjIhmky3USBd41NJrhXGzuZ7WbI",
+      "description": "Neura Paludo, Yoga & Breathwork Specialist",
+      "imageUrl": "https://whfdrrdozhyavyflgaxo.supabase.co/storage/v1/object/sign/yoga/WhatsApp%20Image%202026-03-06%20at%2010.54.49.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jOWY1OGE2Ni03MDFhLTRhNDQtOWJhZC0zOGRkNmVkYTNhODAiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ5b2dhL1doYXRzQXBwIEltYWdlIDIwMjYtMDMtMDYgYXQgMTAuNTQuNDkuanBlZyIsImlhdCI6MTc3MzI0MDg5OCwiZXhwIjozMzMwOTI0MDg5OH0.AdLMA57Nw_ucn8Jfe8bjy3ObXJ09sZS-hlxYqWSK00E",
       "imageHint": "yoga teacher woman"
     },
     {
