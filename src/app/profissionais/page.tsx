@@ -7,6 +7,7 @@ import { Footer } from "@/components/footer";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Toaster } from "@/components/ui/toaster";
 import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 export default function ProfissionaisPage() {
   useReveal();
@@ -74,7 +75,7 @@ export default function ProfissionaisPage() {
                   index % 2 !== 0 && "md:flex-row-reverse"
                 )}
               >
-                <div className={cn("relative h-[600px] overflow-hidden rounded-[2.5rem] shadow-2xl group", index % 2 !== 0 && "md:order-last")}>
+                <div className={cn("relative h-[500px] overflow-hidden rounded-[2.5rem] shadow-2xl group", index % 2 !== 0 && "md:order-last")}>
                   <Image
                     src={img?.imageUrl || ""}
                     alt={teacher.name}
@@ -121,5 +122,3 @@ export default function ProfissionaisPage() {
     </main>
   );
 }
-
-import { cn } from "@/lib/utils";
