@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
@@ -24,11 +23,6 @@ const practices = [
     description: "Técnicas de atenção plena para reduzir ansiedade e aumentar clareza mental.",
     imageId: "meditation",
   },
-  {
-    title: "Aulas Particulares",
-    description: "Experiência personalizada respeitando suas necessidades e objetivos.",
-    imageId: "private-class",
-  },
 ];
 
 export function Services() {
@@ -42,7 +36,7 @@ export function Services() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {practices.map((practice, index) => {
             const img = PlaceHolderImages.find((i) => i.id === practice.imageId);
             return (
