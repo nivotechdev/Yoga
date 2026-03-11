@@ -51,13 +51,13 @@
     {
       "id": "teacher-neura",
       "description": "Neura Paludo, Yoga Instructor",
-      "imageUrl": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx5b2dhJTIwdGVhY2hlciUyMHdvbWFufGVufDB8fHx8MTc3MTI4NTc1MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://whfdrrdozhyavyflgaxo.supabase.co/storage/v1/object/sign/yoga/neura.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jOWY1OGE2Ni03MDFhLTRhNDQtOWJhZC0zOGRkNmVkYTNhODAiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ5b2dhL25ldXJhLmpwZWciLCJpYXQiOjE3NzMyMzY5NTUsImV4cCI6MzMzMDkyMzY5NTV9.ox2Srl2cfVdHXMfosjIhmky3USBd41NJrhXGzuZ7WbI",
       "imageHint": "yoga teacher woman"
     },
     {
       "id": "teacher-aline",
       "description": "Aline de Vargas, Yoga and Therapy Instructor",
-      "imageUrl": "https://images.unsplash.com/photo-1594381898411-846e7d193883?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx5b2dhJTIwcHJvZmVzc29yfGVufDB8fHx8MTc3MTI4NTc1MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://whfdrrdozhyavyflgaxo.supabase.co/storage/v1/object/sign/yoga/aline.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jOWY1OGE2Ni03MDFhLTRhNDQtOWJhZC0zOGRkNmVkYTNhODAiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ5b2dhL2FsaW5lLmpwZWciLCJpYXQiOjE3NzMyMzcxMDksImV4cCI6MzMzMDkyMzcxMDl9.9Sg8TDq4mspJEAalbVksNoZH12m8k31A8s0vGPnohmI",
       "imageHint": "yoga instructor"
     }
   ]
