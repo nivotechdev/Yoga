@@ -18,10 +18,10 @@ export function Hero() {
     offset: ["start start", "end start"],
   });
 
-  const yContent = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacityContent = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const scaleContent = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
-  const yVideo = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+  const yContent = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
+  const opacityContent = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
+  const scaleContent = useTransform(scrollYProgress, [0, 0.4], [1, 0.98]);
+  const yVideo = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
 
   return (
     <section 
@@ -31,7 +31,7 @@ export function Hero() {
       {/* Background Video/Image with Parallax */}
       <motion.div 
         style={{ y: yVideo }}
-        className="absolute inset-0 z-0 h-[120%] w-full"
+        className="absolute inset-0 z-0 h-[115%] w-full"
       >
         <video
           autoPlay
@@ -54,19 +54,19 @@ export function Hero() {
           )}
         </video>
         {/* Quality fix: Separate overlay for brightness instead of applying to video tag */}
-        <div className="absolute inset-0 bg-black/40 backdrop-brightness-[0.7]" />
+        <div className="absolute inset-0 bg-black/40 backdrop-brightness-[0.75]" />
       </motion.div>
 
       {/* Content with Smooth Reveal and Scroll Animation */}
       <motion.div 
         style={{ y: yContent, opacity: opacityContent, scale: scaleContent }}
-        className="relative z-10 text-center px-6 max-w-4xl mx-auto text-white"
+        className="relative z-10 text-center px-6 max-w-5xl mx-auto text-white flex flex-col items-center justify-center"
       >
         <motion.h1 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-          className="font-headline text-5xl md:text-8xl mb-6 leading-tight tracking-tighter"
+          transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+          className="font-headline text-4xl md:text-7xl mb-8 leading-[1.1] tracking-tighter"
         >
           Corpo, Mente e Essência
         </motion.h1>
@@ -74,8 +74,8 @@ export function Hero() {
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
-          className="font-body text-xl md:text-2xl mb-10 text-white/90 font-light tracking-wide"
+          transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
+          className="font-body text-lg md:text-xl mb-12 text-white/80 font-light tracking-widest uppercase"
         >
           Respire. Sinta. Reconecte-se.
         </motion.p>
@@ -83,41 +83,41 @@ export function Hero() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1], delay: 0.6 }}
+          className="flex flex-col sm:flex-row gap-6 justify-center"
         >
-          <Button size="lg" variant="default" className="rounded-full px-10 h-14 text-lg hover:scale-105 transition-all shadow-xl" asChild>
+          <Button size="lg" variant="default" className="rounded-full px-12 h-14 text-sm tracking-widest font-bold uppercase hover:scale-105 transition-all shadow-2xl" asChild>
             <Link href="#contact">Agendar Aula</Link>
           </Button>
-          <Button size="lg" variant="outline" className="rounded-full px-10 h-14 text-lg bg-white/10 backdrop-blur-sm border-white/40 text-white hover:bg-white hover:text-foreground transition-all" asChild>
+          <Button size="lg" variant="outline" className="rounded-full px-12 h-14 text-sm tracking-widest font-bold uppercase bg-white/5 backdrop-blur-sm border-white/30 text-white hover:bg-white hover:text-foreground transition-all" asChild>
             <Link href="#services">Ver Práticas</Link>
           </Button>
         </motion.div>
       </motion.div>
 
-      {/* Scroll indicator - Enhanced Centering and Animation */}
+      {/* Scroll indicator - Refined Position and Animation */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
+        transition={{ delay: 1.8, duration: 1 }}
         style={{ opacity: opacityContent }}
-        className="absolute bottom-12 left-0 right-0 z-20 flex flex-col items-center justify-center pointer-events-none"
+        className="absolute bottom-10 left-0 right-0 z-20 flex flex-col items-center justify-center pointer-events-none"
       >
-        <div className="w-[26px] h-[44px] border-2 border-white/30 rounded-full flex justify-center pt-2 backdrop-blur-[2px]">
+        <div className="w-[24px] h-[40px] border-[1.5px] border-white/20 rounded-full flex justify-center pt-2 backdrop-blur-[1px]">
           <motion.div 
             animate={{ 
-              y: [0, 12, 0],
-              opacity: [0.3, 1, 0.3]
+              y: [0, 10, 0],
+              opacity: [0.4, 1, 0.4]
             }}
             transition={{ 
-              duration: 2, 
+              duration: 2.5, 
               repeat: Infinity, 
               ease: "easeInOut" 
             }}
-            className="w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.8)]" 
+            className="w-1 h-1 bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,1)]" 
           />
         </div>
-        <span className="mt-3 text-[9px] uppercase tracking-[0.3em] text-white/40 font-bold">Scroll</span>
+        <span className="mt-3 text-[8px] uppercase tracking-[0.4em] text-white/30 font-bold">Descubra</span>
       </motion.div>
     </section>
   );
