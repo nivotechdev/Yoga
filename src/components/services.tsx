@@ -15,7 +15,7 @@ const practices = [
   },
   {
     title: "Breathwork Integrativo",
-    description: "Técnicas de respiração consciente para a autorregulação do sistema nervoso, promovendo clareza mental e equilíbrio profundo.",
+    description: "Respiração consciente para autorregulação, clareza mental e equilíbrio.",
     imageId: "restorative-yoga",
   },
   {
