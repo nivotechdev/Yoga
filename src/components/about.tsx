@@ -1,5 +1,8 @@
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export function About() {
   const aboutImg = PlaceHolderImages.find((img) => img.id === "about-img");
@@ -20,6 +23,19 @@ export function About() {
               <p>
                 O Gandha é um refúgio para a harmonia física e espiritual. Baseados no <strong>Hatha Yoga Integrativo</strong>, acolhemos todos os níveis em uma jornada de conexão interna e não-violência, transformando o excesso da vida urbana em equilíbrio profundo.
               </p>
+
+              <div className="pt-2">
+                <Button 
+                  variant="outline" 
+                  className="rounded-full px-8 h-12 border-accent/20 text-accent hover:bg-accent hover:text-white transition-all group" 
+                  asChild
+                >
+                  <Link href="/profissionais" className="flex items-center gap-2">
+                    Conheça Nossa Equipe
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </Button>
+              </div>
               
               <div className="grid sm:grid-cols-2 gap-8 pt-10 border-t border-accent/10">
                 <div>
