@@ -24,20 +24,20 @@ export function About() {
                 O Gandha é um refúgio para a harmonia física e espiritual. Baseados no <strong>Hatha Yoga Integrativo</strong>, acolhemos todos os níveis em uma jornada de conexão interna e não-violência, transformando o excesso da vida urbana em equilíbrio profundo.
               </p>
 
-              <div className="pt-2">
+              <div className="pt-4">
                 <Button 
                   variant="outline" 
-                  className="rounded-full px-8 h-12 border-accent/20 text-accent hover:bg-accent hover:text-white transition-all group" 
+                  className="rounded-full px-10 h-14 border-accent/30 bg-accent/5 text-accent hover:bg-accent hover:text-white hover:border-accent transition-all duration-500 group shadow-lg hover:shadow-accent/20 active:scale-95" 
                   asChild
                 >
-                  <Link href="/profissionais" className="flex items-center gap-2">
-                    Conheça Nossa Equipe
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <Link href="/profissionais" className="flex items-center gap-3">
+                    <span className="text-[10px] tracking-[0.3em] font-bold uppercase">Conheça Nossa Equipe</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-500 ease-out" />
                   </Link>
                 </Button>
               </div>
               
-              <div className="grid sm:grid-cols-2 gap-8 pt-10 border-t border-accent/10">
+              <div className="grid sm:grid-cols-2 gap-8 pt-12 border-t border-accent/10">
                 <div>
                   <h4 className="font-headline text-xl text-foreground mb-1">Neura Paludo</h4>
                   <p className="text-[10px] tracking-[0.2em] uppercase text-accent font-bold mb-3">Yoga & Breathwork</p>
