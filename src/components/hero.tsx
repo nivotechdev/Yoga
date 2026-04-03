@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -9,7 +8,7 @@ import { motion } from "framer-motion";
 
 export function Hero() {
   const heroImg = PlaceHolderImages.find((img) => img.id === "hero-bg");
-  const videoUrl = "https://whfdrrdozhyavyflgaxo.supabase.co/storage/v1/object/sign/yoga/Ultraprofessional_cinematic_commercial_20260.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jOWY1OGE2Ni03MDFhLTRhNDQtOWJhZC0zOGRkNmVkYTNhODAiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ5b2dhL1VsdHJhcHJvZmVzc2lvbmFsX2NpbmVtYXRpY19jb21tZXJjaWFsXzIwMjYwLm1wNCIsImlhdCI6MTc3MTI4NjU1OCwiZXhwIjo0OTI0ODg2NTU4fQ.wbb6XHux0Gdf3G8H7Gag2I9mWiYlJnozCJCrqP8fRTI";
+  const videoUrl = "https://whfdrrdozhyavyflgaxo.supabase.co/storage/v1/object/sign/yoga/videocorreto.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jOWY1OGE2Ni03MDFhLTRhNDQtOWJhZC0zOGRkNmVkYTNhODAiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ5b2dhL3ZpZGVvY29ycmV0by5tcDQiLCJpYXQiOjE3NzQ5ODAyMTcsImV4cCI6ODc3NTk3MjIxN30.uRd1BRVKqr3hASXuLYxFCg32QdhhmFzWGTXx3z8BG3c";
 
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black">
@@ -23,6 +22,7 @@ export function Hero() {
           preload="auto"
           poster={heroImg?.imageUrl}
           className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectPosition: "59% 25%" }}
         >
           <source src={videoUrl} type="video/mp4" />
           {heroImg && (
@@ -35,11 +35,11 @@ export function Hero() {
             />
           )}
         </video>
-        <div className="absolute inset-0 bg-black/40 backdrop-brightness-[0.75]" />
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-[6px] backdrop-brightness-60 backdrop-contrast-120 backdrop-saturate-80" />
       </div>
 
       {/* Content - Simple Entrance without Scroll Interaction */}
-      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto text-white flex flex-col items-center justify-center">
+      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto text-white flex flex-col items-center justify-center translate-y-12">
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -71,25 +71,21 @@ export function Hero() {
             <Link href="#services">Ver Práticas</Link>
           </Button>
         </motion.div>
-      </div>
 
-      {/* Scroll indicator - Properly positioned at the bottom */}
-      <div className="absolute bottom-10 left-0 right-0 z-20 flex flex-col items-center justify-center pointer-events-none">
-        <div className="w-[24px] h-[40px] border-[1.5px] border-white/20 rounded-full flex justify-center pt-2">
-          <motion.div 
-            animate={{ 
-              y: [0, 10, 0],
-              opacity: [0.4, 1, 0.4]
-            }}
-            transition={{ 
-              duration: 2.5, 
-              repeat: Infinity, 
-              ease: "easeInOut" 
-            }}
-            className="w-1 h-1 bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,1)]" 
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: "easeOut", delay: 1.2, type: "spring", stiffness: 50 }}
+          className="mt-16"
+        >
+          <Image 
+            src="https://whfdrrdozhyavyflgaxo.supabase.co/storage/v1/object/sign/yoga/yoga-removebg-preview.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jOWY1OGE2Ni03MDFhLTRhNDQtOWJhZC0zOGRkNmVkYTNhODAiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ5b2dhL3lvZ2EtcmVtb3ZlYmctcHJldmlldy5wbmciLCJpYXQiOjE3NzQ3OTMzMzYsImV4cCI6NDg5Njg1NzMzNn0.K2r0j6h4vxZVqslIvfvKceukbAoCWajbQzX8Irve5Wc" 
+            alt="Gandha Logo" 
+            width={150} 
+            height={150} 
+            className="brightness-125 drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]"
           />
-        </div>
-        <span className="mt-3 text-[8px] uppercase tracking-[0.4em] text-white/30 font-bold">Descubra</span>
+        </motion.div>
       </div>
     </section>
   );

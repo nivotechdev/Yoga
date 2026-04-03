@@ -21,13 +21,13 @@ export function About() {
             </h2>
             <div className="space-y-8 text-lg text-muted-foreground font-light leading-relaxed">
               <p>
-                O Gandha é um refúgio para a harmonia física e espiritual. Baseados no <strong>Hatha Yoga Integrativo</strong>, acolhemos todos os níveis em uma jornada de conexão interna e não-violência, transformando o excesso da vida urbana em equilíbrio profundo.
+                A Gandha é um refúgio para a harmonia física e espiritual. Baseada no <strong>Hatha Yoga Integrativo</strong>, acolhemos todos os níveis em uma jornada de conexão interna e não-violência, transformando o excesso da vida urbana em equilíbrio profundo.
               </p>
 
               <div className="pt-6">
                 <Button 
                   variant="outline" 
-                  className="rounded-full px-12 h-16 border-accent/20 bg-accent/5 text-accent hover:bg-accent hover:text-white hover:border-accent hover:shadow-2xl hover:shadow-accent/30 transition-all duration-700 group active:scale-95" 
+                  className="rounded-full px-12 h-16 border-accent/80 bg-accent/5 text-accent hover:bg-accent hover:text-white hover:border-accent hover:shadow-2xl hover:shadow-accent/30 transition-all duration-700 group active:scale-95" 
                   asChild
                 >
                   <Link href="/profissionais" className="flex items-center gap-4">
@@ -40,7 +40,7 @@ export function About() {
               <div className="grid sm:grid-cols-2 gap-8 pt-12 border-t border-accent/10">
                 <div>
                   <h4 className="font-headline text-xl text-foreground mb-1">Neura Paludo</h4>
-                  <p className="text-[10px] tracking-[0.2em] uppercase text-accent font-bold mb-3">Yoga & Breathwork</p>
+                  <p className="text-[10px] tracking-[0.2em] uppercase text-accent font-bold mb-3">Yoga</p>
                   <p className="text-sm italic leading-relaxed">
                     Especialista em autorregulação através da respiração e consciência corporal.
                   </p>

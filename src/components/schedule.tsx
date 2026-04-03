@@ -1,9 +1,10 @@
-"use client";
-
+'use client';
+import { useEffect, useState } from 'react';
 import { CalendarDays, Clock } from "lucide-react";
 import Link from "next/link";
 import {
   Carousel,
+  CarouselApi,
   CarouselContent,
   CarouselItem,
   CarouselNext,
@@ -35,10 +36,19 @@ const scheduleData = [
 
 export function Schedule() {
   const whatsappNumber = "5554999882995";
+  const [api, setApi] = useState<CarouselApi>()
+
+  useEffect(() => {
+    if (!api) {
+      return
+    }
+
+    // Exemplo de uso da API:
+    // api.scrollNext()
+  }, [api])
 
   return (
     <section id="schedule" className="py-32 px-6 bg-background relative overflow-hidden">
-      {/* Elementos decorativos de fundo */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 pointer-events-none" />
       
       <div className="max-w-7xl mx-auto relative md:px-20">
@@ -58,11 +68,11 @@ export function Schedule() {
         </div>
 
         <div className="reveal relative group">
-          {/* Gradientes de desfoque nas bordas para sensação de infinito */}
           <div className="absolute inset-y-0 left-0 w-12 md:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
           <div className="absolute inset-y-0 right-0 w-12 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 
           <Carousel
+            setApi={setApi} 
             opts={{
               align: "start",
               loop: true,
@@ -110,13 +120,11 @@ export function Schedule() {
               ))}
             </CarouselContent>
             
-            {/* Botões de navegação posicionados estrategicamente para não serem cobertos no desktop */}
             <div className="hidden md:block">
-              <CarouselPrevious className="-left-6 lg:-left-12 h-14 w-14 rounded-full border-border/40 bg-white/90 backdrop-blur-sm hover:bg-accent hover:text-white hover:border-accent transition-all shadow-xl z-20" />
-              <CarouselNext className="-right-6 lg:-right-12 h-14 w-14 rounded-full border-border/40 bg-white/90 backdrop-blur-sm hover:bg-accent hover:text-white hover:border-accent transition-all shadow-xl z-20" />
+              <CarouselPrevious className="absolute top-1/2 -translate-y-1/2 -left-6 lg:-left-12 h-14 w-14 rounded-full border-border/40 bg-white/90 backdrop-blur-sm hover:bg-accent hover:text-white hover:border-accent transition-all shadow-xl z-20" />
+              <CarouselNext className="absolute top-1/2 -translate-y-1/2 -right-6 lg:-right-12 h-14 w-14 rounded-full border-border/40 bg-white/90 backdrop-blur-sm hover:bg-accent hover:text-white hover:border-accent transition-all shadow-xl z-20" />
             </div>
 
-            {/* Navegação Mobile mantida intacta */}
             <div className="flex md:hidden justify-center gap-6 mt-12">
               <CarouselPrevious className="static translate-y-0 h-14 w-14 rounded-full border-border/40 bg-card" />
               <CarouselNext className="static translate-y-0 h-14 w-14 rounded-full border-border/40 bg-card" />

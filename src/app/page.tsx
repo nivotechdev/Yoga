@@ -4,7 +4,7 @@ import { useReveal } from "@/hooks/use-reveal";
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
 import { About } from "@/components/about";
-import { Services } from "@/components/services";
+import { Yoga } from "@/components/yoga";
 import { Schedule } from "@/components/schedule";
 import { Differentials } from "@/components/differentials";
 import { Location } from "@/components/location";
@@ -20,7 +20,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
-      <Services />
+      <Yoga />
       <Schedule />
       <Differentials />
       <Location />
