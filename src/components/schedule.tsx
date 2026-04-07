@@ -120,10 +120,8 @@ export function Schedule() {
               ))}
             </CarouselContent>
             
-            <div className="hidden md:block">
-              <CarouselPrevious className="absolute top-1/2 -translate-y-1/2 -left-6 lg:-left-12 h-14 w-14 rounded-full border-border/40 bg-white/90 backdrop-blur-sm hover:bg-accent hover:text-white hover:border-accent transition-all shadow-xl z-20" />
-              <CarouselNext className="absolute top-1/2 -translate-y-1/2 -right-6 lg:-right-12 h-14 w-14 rounded-full border-border/40 bg-white/90 backdrop-blur-sm hover:bg-accent hover:text-white hover:border-accent transition-all shadow-xl z-20" />
-            </div>
+            <CarouselPrevious className="absolute top-1/2 -translate-y-1/2 -left-6 lg:-left-12 h-14 w-14 rounded-full border-border/40 bg-white/90 backdrop-blur-sm hover:bg-accent hover:text-white hover:border-accent transition-all shadow-xl z-20 hidden md:flex" />
+            <CarouselNext className="absolute top-1/2 -translate-y-1/2 -right-6 lg:-right-12 h-14 w-14 rounded-full border-border/40 bg-white/90 backdrop-blur-sm hover:bg-accent hover:text-white hover:border-accent transition-all shadow-xl z-20 hidden md:flex" />
 
             <div className="flex md:hidden justify-center gap-6 mt-12">
               <CarouselPrevious className="static translate-y-0 h-14 w-14 rounded-full border-border/40 bg-card" />

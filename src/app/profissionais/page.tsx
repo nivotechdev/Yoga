@@ -78,7 +78,7 @@ export default function ProfissionaisPage() {
       <Navbar />
       
       {/* Header Section */}
-      <section className="pt-40 pb-20 px-6">
+      <section className="bg-card pt-40 pb-20 px-6">
         <div className="max-w-7xl mx-auto text-center">
           <motion.span 
             initial={{ opacity: 0, y: 10 }}

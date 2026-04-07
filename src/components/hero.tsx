@@ -35,7 +35,7 @@ export function Hero() {
             />
           )}
         </video>
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-[6px] backdrop-brightness-60 backdrop-contrast-120 backdrop-saturate-80" />
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-[4px] backdrop-brightness-60 backdrop-contrast-120 backdrop-saturate-80" />
       </div>
 
       {/* Content - Simple Entrance without Scroll Interaction */}
