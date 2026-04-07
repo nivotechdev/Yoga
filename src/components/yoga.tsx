@@ -21,7 +21,7 @@ export function Yoga() {
   ];
 
   return (
-    <section id="yoga" className="py-24 md:py-32 bg-background px-6 overflow-hidden">
+    <section id="yoga" className="py-12 md:py-16 bg-background px-6 overflow-hidden">
       <div className="max-w-4xl mx-auto reveal">
         <div className="text-center">
             <span className="text-primary text-xs tracking-[0.5em] uppercase mb-6 block font-semibold">

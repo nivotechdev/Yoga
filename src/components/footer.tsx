@@ -10,7 +10,7 @@ export function Footer() {
   const email = "devargasaline@gmail.com";
 
   return (
-    <footer className="bg-foreground text-background py-16 px-6">
+    <footer className="bg-foreground text-background py-12 md:py-16 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2">

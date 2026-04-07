@@ -14,7 +14,7 @@ export function Contact() {
   return (
     <section 
       id="contact" 
-      className="relative py-24 md:py-40 px-6 bg-[#F9F7F2] overflow-hidden"
+      className="relative py-12 md:py-16 px-6 bg-[#F9F7F2] overflow-hidden"
     >
       {/* Editorial Decorative Background */}
       <div className="absolute top-10 right-[-5%] pointer-events-none select-none hidden lg:block">
@@ -55,7 +55,7 @@ export function Contact() {
         >
           <div className="space-y-8 text-xl md:text-2xl text-muted-foreground font-light leading-relaxed border-l-2 border-accent/20 pl-6 md:pl-10">
             <p className="text-foreground font-medium italic">
-              No Gandha Yoga, transcendemos a prática física para oferecer um refúgio de silêncio e poder.
+              Na Gandha Yoga, transcendemos a prática física para oferecer um refúgio de silêncio e poder.
             </p>
             <p>
               Em turmas ultra-exclusivas, você encontra a harmonia entre a alta performance da mente e o descanso profundo do espírito. O luxo de estar presente é a sua nova realidade.

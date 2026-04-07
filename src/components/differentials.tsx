@@ -26,7 +26,7 @@ const diffs = [
 
 export function Differentials() {
   return (
-    <section id="differentials" className="py-24 px-6 bg-background">
+    <section id="differentials" className="py-12 md:py-16 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="reveal">

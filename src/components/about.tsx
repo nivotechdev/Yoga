@@ -1,14 +1,12 @@
 import Image from "next/image";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export function About() {
-  const aboutImg = PlaceHolderImages.find((img) => img.id === "about-img");
 
   return (
-    <section id="about" className="py-24 md:py-32 px-6 overflow-hidden">
+    <section id="about" className="py-12 md:py-16 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
           <div className="reveal">
@@ -56,14 +54,12 @@ export function About() {
             </div>
           </div>
           <div className="relative reveal h-[500px] md:h-[650px] group">
-            <div className="absolute inset-0 border border-accent/10 rounded-[2.5rem] -rotate-2 transition-transform group-hover:rotate-0 duration-1000" />
-            <div className="relative h-full overflow-hidden rounded-[2.5rem] shadow-2xl">
+            <div className="relative h-full overflow-hidden rounded-[2.5rem]">
               <Image
-                src={aboutImg?.imageUrl || ""}
+                src="https://whfdrrdozhyavyflgaxo.supabase.co/storage/v1/object/sign/yoga/Whisk_f2986d6df322671955c4d561328cdeaedr-removebg-preview.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jOWY1OGE2Ni03MDFhLTRhNDQtOWJhZC0zOGRkNmVkYTNhODAiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ5b2dhL1doaXNrX2YyOTg2ZDZkZjMyMjY3MTk1NWM0ZDU2MTMyOGNkZWFlZHItcmVtb3ZlYmctcHJldmlldy5wbmciLCJpYXQiOjE3NzU1Nzk0MjcsImV4cCI6Mjk3Nzk1NDc0Mjd9.NpgCFYfmSe8R_P-9nA5KVUX0gx_KNiGRKA9vGMBCG-U"
                 alt="Ambiente Gandha Yoga"
                 fill
-                className="object-cover scale-105 group-hover:scale-100 transition-transform duration-1000"
-                data-ai-hint="yoga meditation space"
+                className="object-cover"
               />
             </div>
           </div>

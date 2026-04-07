@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from 'next/navigation';
 import { Button } from "@/components/ui/button";
 import { Menu, Instagram, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -17,10 +18,13 @@ import {
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  
+  const pathname = usePathname();
+
   const logoUrl = "https://whfdrrdozhyavyflgaxo.supabase.co/storage/v1/object/sign/yoga/yoga-removebg-preview.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jOWY1OGE2Ni03MDFhLTRhNDQtOWJhZC0zOGRkNmVkYTNhODAiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ5b2dhL3lvZ2EtcmVtb3ZlYmctcHJldmlldy5wbmciLCJpYXQiOjE3NzIwMzEyNzQsImV4cCI6MzMzMDgwMzEyNzR9.KpEnBPjF57rgceI_Ka7v5gWMmhyYF901NYXC81Bomzk";
   const instagramUrl = "https://www.instagram.com/gandhayoga/";
   const whatsappUrl = "https://wa.me/5554999882995";
+
+  const isScrolledState = isScrolled || pathname === '/profissionais';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,7 +54,7 @@ export function Navbar() {
       <div
         className={cn(
           "w-full transition-all duration-500 ease-dynamic-island flex items-center pointer-events-auto overflow-hidden",
-          isScrolled
+          isScrolledState
             ? "max-w-4xl h-16 bg-white/80 backdrop-blur-lg rounded-full border border-white/20 shadow-xl shadow-black/5 px-6"
             : "max-w-7xl h-20 bg-transparent px-4"
         )}
@@ -60,7 +64,7 @@ export function Navbar() {
             <Link href="/" className="flex items-center gap-2 group shrink-0">
               <div className={cn(
                 "relative h-10 w-40 transition-all duration-500",
-                isScrolled ? "scale-90" : "scale-100"
+                isScrolledState ? "scale-90" : "scale-100"
               )}>
                 <Image
                   src={logoUrl}
@@ -68,7 +72,7 @@ export function Navbar() {
                   fill
                   className={cn(
                     "object-contain transition-all duration-500",
-                    !isScrolled && "brightness-0 invert"
+                    !isScrolledState && "brightness-0 invert"
                   )}
                   priority
                 />
@@ -83,7 +87,7 @@ export function Navbar() {
                 href={link.href}
                 className={cn(
                   "text-sm font-medium transition-colors duration-500 whitespace-nowrap",
-                  isScrolled 
+                  isScrolledState 
                     ? "text-foreground/80 hover:text-primary" 
                     : "text-white/90 hover:text-white"
                 )}
@@ -98,7 +102,7 @@ export function Navbar() {
               variant="default" 
               className={cn(
                 "rounded-full px-6 transition-all duration-300 hover:scale-105 active:scale-95",
-                isScrolled ? "bg-primary text-white" : "bg-white text-primary"
+                isScrolledState ? "bg-primary text-white" : "bg-white text-primary"
               )}
               asChild
             >
@@ -112,7 +116,7 @@ export function Navbar() {
           <Link href="/" className="flex items-center gap-2 shrink-0">
             <div className={cn(
                 "relative h-8 w-32 transition-all duration-500",
-                isScrolled ? "scale-95" : "scale-100"
+                isScrolledState ? "scale-95" : "scale-100"
               )}>
               <Image
                 src={logoUrl}
@@ -120,7 +124,7 @@ export function Navbar() {
                 fill
                 className={cn(
                   "object-contain transition-all duration-500",
-                  !isScrolled && "brightness-0 invert"
+                  !isScrolledState && "brightness-0 invert"
                 )}
               />
             </div>
@@ -133,7 +137,7 @@ export function Navbar() {
                 size="icon" 
                 className={cn(
                   "transition-colors duration-500 rounded-full h-10 w-10 active:scale-90",
-                  isScrolled ? "text-primary bg-primary/5" : "text-white bg-white/10"
+                  isScrolledState ? "text-primary bg-primary/5" : "text-white bg-white/10"
                 )}
               >
                 <Menu className="w-5 h-5" />

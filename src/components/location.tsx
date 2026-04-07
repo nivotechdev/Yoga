@@ -7,7 +7,7 @@ export function Location() {
   const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${mapSearchQuery}`;
 
   return (
-    <section id="location" className="py-24 md:py-32 px-6 bg-background">
+    <section id="location" className="py-12 md:py-16 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-3 gap-12 items-start">
           {/* Text Content */}

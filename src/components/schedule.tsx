@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { CalendarDays, Clock } from "lucide-react";
+import { CalendarDays, Clock, Hand } from "lucide-react";
 import Link from "next/link";
 import {
   Carousel,
@@ -48,7 +48,7 @@ export function Schedule() {
   }, [api])
 
   return (
-    <section id="schedule" className="py-32 px-6 bg-background relative overflow-hidden">
+    <section id="schedule" className="py-12 md:py-16 px-6 bg-background relative overflow-hidden">
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 pointer-events-none" />
       
       <div className="max-w-7xl mx-auto relative md:px-20">
@@ -77,7 +77,7 @@ export function Schedule() {
               align: "start",
               loop: true,
             }}
-            className="w-full"
+            className="w-full z-20"
           >
             <CarouselContent className="-ml-4 md:-ml-8">
               {scheduleData.map((item, index) => (
@@ -120,8 +120,8 @@ export function Schedule() {
               ))}
             </CarouselContent>
             
-            <CarouselPrevious className="absolute top-1/2 -translate-y-1/2 -left-6 lg:-left-12 h-14 w-14 rounded-full border-border/40 bg-white/90 backdrop-blur-sm hover:bg-accent hover:text-white hover:border-accent transition-all shadow-xl z-20 hidden md:flex" />
-            <CarouselNext className="absolute top-1/2 -translate-y-1/2 -right-6 lg:-right-12 h-14 w-14 rounded-full border-border/40 bg-white/90 backdrop-blur-sm hover:bg-accent hover:text-white hover:border-accent transition-all shadow-xl z-20 hidden md:flex" />
+            <CarouselPrevious className="absolute top-1/2 -translate-y-1/2 -left-6 lg:-left-12 h-14 w-14 rounded-full border-border/40 bg-white/90 backdrop-blur-sm hover:bg-accent hover:text-white hover:border-accent transition-all shadow-xl hidden md:flex" />
+            <CarouselNext className="absolute top-1/2 -translate-y-1/2 -right-6 lg:-right-12 h-14 w-14 rounded-full border-border/40 bg-white/90 backdrop-blur-sm hover:bg-accent hover:text-white hover:border-accent transition-all shadow-xl hidden md:flex" />
 
             <div className="flex md:hidden justify-center gap-6 mt-12">
               <CarouselPrevious className="static translate-y-0 h-14 w-14 rounded-full border-border/40 bg-card" />
@@ -130,11 +130,15 @@ export function Schedule() {
           </Carousel>
         </div>
 
-        <div className="mt-20 text-center reveal">
-          <p className="text-muted-foreground font-light italic text-sm">
-            * Clique em um horário para consultar disponibilidade via WhatsApp Concierge.
-            <br />
-            Aulas exclusivas com no máximo 8 praticantes por turma.
+        <div className="mt-16 text-center reveal">
+          <div className="inline-flex items-center justify-center gap-3">
+            <Hand className="w-4 h-4 text-accent" />
+            <p className="text-muted-foreground font-light italic text-sm">
+              Escolha um horário acima para agendar via WhatsApp.
+            </p>
+          </div>
+          <p className="text-xs text-muted-foreground/60 mt-4 font-light">
+            Aulas com no máximo 8 praticantes por turma.
           </p>
         </div>
       </div>
