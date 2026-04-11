@@ -34,6 +34,9 @@ const scheduleData = [
   },
 ];
 
+// Duplicate the schedule data to ensure the carousel can loop
+const duplicatedScheduleData = [...scheduleData, ...scheduleData];
+
 export function Schedule() {
   const whatsappNumber = "5554999882995";
   const [api, setApi] = useState<CarouselApi>()
@@ -42,9 +45,6 @@ export function Schedule() {
     if (!api) {
       return
     }
-
-    // Exemplo de uso da API:
-    // api.scrollNext()
   }, [api])
 
   return (
@@ -80,8 +80,8 @@ export function Schedule() {
             className="w-full z-20"
           >
             <CarouselContent className="-ml-4 md:-ml-8">
-              {scheduleData.map((item, index) => (
-                <CarouselItem key={item.day} className="pl-4 md:pl-8 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
+              {duplicatedScheduleData.map((item, index) => (
+                <CarouselItem key={`${item.day}-${index}`} className="pl-4 md:pl-8 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
                   <div
                     className="h-full bg-card p-8 rounded-[2.5rem] border border-border/30 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-700 group/card flex flex-col"
                     style={{ transitionDelay: `${index * 50}ms` }}
@@ -120,13 +120,9 @@ export function Schedule() {
               ))}
             </CarouselContent>
             
-            <CarouselPrevious className="absolute top-1/2 -translate-y-1/2 -left-6 lg:-left-12 h-14 w-14 rounded-full border-border/40 bg-white/90 backdrop-blur-sm hover:bg-accent hover:text-white hover:border-accent transition-all shadow-xl hidden md:flex" />
-            <CarouselNext className="absolute top-1/2 -translate-y-1/2 -right-6 lg:-right-12 h-14 w-14 rounded-full border-border/40 bg-white/90 backdrop-blur-sm hover:bg-accent hover:text-white hover:border-accent transition-all shadow-xl hidden md:flex" />
+            <CarouselPrevious className="absolute top-1/2 -translate-y-1/2 -left-6 lg:-left-12 h-14 w-14 rounded-full border-border/40 bg-white/90 backdrop-blur-sm hover:bg-accent hover:text-white hover:border-accent transition-all shadow-xl flex" />
+            <CarouselNext className="absolute top-1/2 -translate-y-1/2 -right-6 lg:-right-12 h-14 w-14 rounded-full border-border/40 bg-white/90 backdrop-blur-sm hover:bg-accent hover:text-white hover:border-accent transition-all shadow-xl flex" />
 
-            <div className="flex md:hidden justify-center gap-6 mt-12">
-              <CarouselPrevious className="static translate-y-0 h-14 w-14 rounded-full border-border/40 bg-card" />
-              <CarouselNext className="static translate-y-0 h-14 w-14 rounded-full border-border/40 bg-card" />
-            </div>
           </Carousel>
         </div>
 

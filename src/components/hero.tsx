@@ -7,7 +7,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 export function Hero() {
-  const heroImg = PlaceHolderImages.find((img) => img.id === "hero-bg");
   const videoUrl = "https://whfdrrdozhyavyflgaxo.supabase.co/storage/v1/object/sign/yoga/videocorreto.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jOWY1OGE2Ni03MDFhLTRhNDQtOWJhZC0zOGRkNmVkYTNhODAiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ5b2dhL3ZpZGVvY29ycmV0by5tcDQiLCJpYXQiOjE3NzQ5ODAyMTcsImV4cCI6ODc3NTk3MjIxN30.uRd1BRVKqr3hASXuLYxFCg32QdhhmFzWGTXx3z8BG3c";
 
   return (
@@ -20,20 +19,10 @@ export function Hero() {
           loop
           playsInline
           preload="auto"
-          poster={heroImg?.imageUrl}
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: "59% 25%" }}
         >
           <source src={videoUrl} type="video/mp4" />
-          {heroImg && (
-            <Image
-              src={heroImg.imageUrl}
-              alt={heroImg.description}
-              fill
-              className="object-cover"
-              priority
-            />
-          )}
         </video>
         <div className="absolute inset-0 bg-black/40 backdrop-blur-[4px] backdrop-brightness-60 backdrop-contrast-120 backdrop-saturate-80" />
       </div>
