@@ -33,7 +33,7 @@ export function Yoga() {
         </div>
         <div className="space-y-6 text-lg text-muted-foreground font-light leading-relaxed">
             <p>
-                Mais do que um exercício, o Yoga é uma filosofia de vida, um caminho de autoconhecimento e transformação. É a união entre corpo, mente e espírito, que floresce em um profundo estado de bem-estar e presença.
+                Mais do que um exercício, o Yoga é uma filosofia de vida, um caminho de autoconhecimento e transformação. A prática de yoga envolve uma profunda conexão com os movimentos físicos e a consciência da respiração, que juntos cultivam a presença que tanto buscamos em nosso dia a dia. É a união entre corpo, mente e espírito, que floresce em um profundo estado de bem-estar.
             </p>
             <p>
                 Na Gandha, criamos um refúgio para essa jornada. Nossos instrutores guiam cada prática com cuidado, adaptando as posturas para todos os níveis em um ambiente seguro e acolhedor, onde cada um pode florescer no seu próprio ritmo.

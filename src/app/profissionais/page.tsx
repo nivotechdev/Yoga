@@ -15,8 +15,8 @@ export default function ProfissionaisPage() {
   const teachers = [
     {
       name: "Neura Paludo",
-      role: "Yoga & Breathwork Specialist",
-      bio: "Professora de Yoga com formação internacional e instrutora de Breathwork. Sua abordagem é focada na autorregulação profunda através da respiração e consciência corporal, trazendo o equilíbrio necessário para a vida contemporânea.",
+      role: "Professora de Yoga",
+      bio: "Professora de Yoga há mais de 15 anos, com formação internacional e instrutora de Breathwork. Sua abordagem é focada na autorregulação profunda através da respiração e consciência corporal, trazendo o equilíbrio necessário para a vida contemporânea.",
       specialties: ["Hatha Yoga", "Breathwork Integrativo"],
       imageId: "teacher-neura"
     },
