@@ -2,7 +2,7 @@ import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Gandha Yoga Space',
+  title: 'Gandha Yoga | Caxias do Sul',
   description: 'Um refúgio para o seu bem-estar. Equilíbrio entre corpo, mente e essência. Exclusividade e silêncio.',
   icons: {
     icon: './icon.png',
