@@ -4,6 +4,9 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Gandha Yoga Space',
   description: 'Um refúgio para o seu bem-estar. Equilíbrio entre corpo, mente e essência. Exclusividade e silêncio nos Jardins.',
+  icons: {
+    icon: './icon.png',
+  },
 };
 
 export default function RootLayout({
