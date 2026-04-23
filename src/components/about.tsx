@@ -40,7 +40,7 @@ export function About() {
                   <h4 className="font-headline text-xl text-foreground mb-1">Neura Paludo</h4>
                   <p className="text-[10px] tracking-[0.2em] uppercase text-accent font-bold mb-3">Yoga</p>
                   <p className="text-sm italic leading-relaxed">
-                    Especialista em autorregulação através da respiração e consciência corporal.
+                     Há 15 anos atuando como especialista em autorregulação através da respiração e consciência corporal.
                   </p>
                 </div>
                 <div>
