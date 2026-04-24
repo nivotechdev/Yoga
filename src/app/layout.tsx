@@ -4,6 +4,21 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Gandha Yoga | Caxias do Sul',
   description: 'Um refúgio para o seu bem-estar. Equilíbrio entre corpo, mente e essência. Exclusividade e silêncio.',
+  keywords: ['gandha yoga', 'yoga', 'caxias do sul', 'gandhayoga', 'terapias', 'corpo', 'mente', 'essência'],
+  robots: 'index, follow',
+  authors: [{name: 'Gandha Yoga', url: 'https://gandhayoga.com.br'}],
+  openGraph: {
+    title: 'Gandha Yoga | Caxias do Sul',
+    description: 'Um refúgio para o seu bem-estar. Equilíbrio entre corpo, mente e essência. Exclusividade e silêncio.',
+    images: [{url: 'https://gandhayoga.com.br/icon.png', width: 256, height: 256}],
+    url: 'https://gandhayoga.com.br',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Gandha Yoga | Caxias do Sul',
+    description: 'Um refúgio para o seu bem-estar. Equilíbrio entre corpo, mente e essência. Exclusividade e silêncio.',
+    images: ['https://gandhayoga.com.br/icon.png'],
+  },
   icons: {
     icon: './icon.png',
   },

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gandhayoga.com.br/sitemap.xml
