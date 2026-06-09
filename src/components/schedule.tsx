@@ -18,7 +18,7 @@ const scheduleData = [
   },
   {
     day: "Terça-feira",
-    times: ["06:15", "07:30", "17:15", "18:30"],
+    times: ["07:30", "17:15", "18:30"],
   },
   {
     day: "Quarta-feira",
